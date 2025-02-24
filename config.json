@@ -1,0 +1,17 @@
+{
+    "DEBUG": true,
+    "SECRET_KEY": "a_very_secret_key",
+    "LOGGER_DB_HOST": "localhost",
+    "LOGGER_DB_PORT": 1433,
+    "LOGGER_DB_USERNAME": "akhil",
+    "LOGGER_DB_PASSWORD": "Asv123456",
+    "LOGGER_DB_NAME": "signet_log",
+    "MAIN_DB_HOST": "localhost",
+    "MAIN_DB_PORT": 1433,
+    "MAIN_DB_USERNAME": "akhil",
+    "MAIN_DB_PASSWORD": "Asv123456",
+    "MAIN_DB_NAME": "biostar2_db",
+    "DEFAULT_PRINTER": "Rugtek Printer",
+    "TABLE_PREFIX": "t_lg",
+    "TIME_ZONE": "Asia/Calcutta"
+}

@@ -1,0 +1,1 @@
+pyinstaller --onefile --noconsole --add-data "templates;templates" --add-data "static;static" --add-data "config.json;." app.py

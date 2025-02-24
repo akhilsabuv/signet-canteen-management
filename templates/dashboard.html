@@ -1,0 +1,185 @@
+{% extends "base.html" %}
+{% block title %}Dashboard - Canteen Tool{% endblock %}
+{% block content %}
+<h2 class="mt-4">Dashboard</h2>
+<div class="row g-4 align-items-stretch">
+  <!-- Logger DB Card -->
+  <div class="col-md-6">
+    <div class="card h-100">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <div>
+          <i class="bi bi-database-fill me-2"></i>
+          Logger Database Status:
+          <span id="logger-overall-status" class="{% if logger_tables | selectattr('status') | list | length == logger_tables | length %}text-success{% else %}text-danger{% endif %}">
+            {% if logger_tables | selectattr('status') | list | length == logger_tables | length %}
+              Connected
+            {% else %}
+              Issues Detected
+            {% endif %}
+          </span>
+        </div>
+        <button class="btn btn-sm btn-outline-secondary" onclick="refreshDashboard()">Refresh</button>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Tables</h5>
+        <ul id="logger-tables-list" class="list-group">
+          {% for table in logger_tables %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              {{ table.name }}
+              {% if table.status %}
+                <i class="bi bi-check-circle-fill text-success"></i>
+              {% else %}
+                <i class="bi bi-x-circle-fill text-danger"></i>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- Main DB Card -->
+  <div class="col-md-6">
+    <div class="card h-100">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <div>
+          <i class="bi bi-database-fill me-2"></i>
+          Main Database Status:
+          <span id="main-db-status" class="{% if main_db_status %}text-success{% else %}text-danger{% endif %}">
+            {% if main_db_status %}
+              Connected
+            {% else %}
+              Disconnected
+            {% endif %}
+          </span>
+        </div>
+        <button class="btn btn-sm btn-outline-secondary" onclick="refreshDashboard()">Refresh</button>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Database Overview</h5>
+        <p id="main-db-overview">
+          {% if main_db_status %}
+            All systems operational.
+          {% else %}
+            There is a connection issue with the Main Database.
+          {% endif %}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card mt-4">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <div>
+      <i class="bi bi-table me-2"></i>Main Database – Monitored Tables
+    </div>
+    <button class="btn btn-sm btn-outline-secondary" onclick="refreshTableCounts()">Refresh</button>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered">
+        <thead class="table-light">
+          <tr>
+            <th>Table Name</th>
+            <th>Row Count</th>
+          </tr>
+        </thead>
+        <tbody id="monitored-tables">
+          <!-- Example static rows; replace these with dynamic data -->
+          <tr>
+            <td>Customers</td>
+            <td>1,234</td>
+          </tr>
+          <tr>
+            <td>Orders</td>
+            <td>5,678</td>
+          </tr>
+          <tr>
+            <td>Products</td>
+            <td>234</td>
+          </tr>
+          <tr>
+            <td>Invoices</td>
+            <td>567</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+  // This function calls the Flask endpoint and updates the table in the UI.
+  function refreshMonitoringTables() {
+    fetch("{{ url_for('monitored_tables.get_monitored_tables_route') }}")
+      .then(response => response.json())
+      .then(data => {
+        if(data.error) {
+          console.error("Error fetching monitored tables:", data.error);
+          return;
+        }
+        const tbody = document.getElementById("monitored-tables");
+        tbody.innerHTML = "";
+        data.forEach(item => {
+          const row = document.createElement("tr");
+          
+          const tdName = document.createElement("td");
+          tdName.textContent = item.table_name;
+          row.appendChild(tdName);
+          
+          const tdCount = document.createElement("td");
+          tdCount.textContent = item.row_count;
+          row.appendChild(tdCount);
+          
+          tbody.appendChild(row);
+        });
+      })
+      .catch(error => console.error("Fetch error:", error));
+  }
+  
+  // Optionally, refresh the table when the page loads.
+  window.onload = refreshMonitoringTables;
+
+  // Placeholder function for refreshing table counts dynamically
+  function refreshTableCounts() {
+    // Use fetch() or AJAX to call an endpoint that returns the latest table row counts.
+    // Once the data is received, update the DOM inside #monitored-tables.
+    console.log('Refreshing table counts...');
+  }
+
+  function refreshDashboard() {
+    fetch("{{ url_for('dashboard.dashboard_status') }}")
+      .then(response => response.json())
+      .then(data => {
+        // Update Logger overall status
+        const loggerOverallStatusEl = document.getElementById("logger-overall-status");
+        const allOk = data.logger_tables.every(item => item.status);
+        loggerOverallStatusEl.textContent = allOk ? "Connected" : "Issues Detected";
+        loggerOverallStatusEl.className = allOk ? "text-success" : "text-danger";
+        
+        // Update Logger tables list
+        const loggerTablesListEl = document.getElementById("logger-tables-list");
+        loggerTablesListEl.innerHTML = "";
+        data.logger_tables.forEach(item => {
+          const li = document.createElement("li");
+          li.className = "list-group-item d-flex justify-content-between align-items-center";
+          li.textContent = item.name;
+          const icon = document.createElement("i");
+          icon.className = item.status ? "bi bi-check-circle-fill text-success" : "bi bi-x-circle-fill text-danger";
+          li.appendChild(icon);
+          loggerTablesListEl.appendChild(li);
+        });
+        
+        // Update Main DB status
+        const mainDbStatusEl = document.getElementById("main-db-status");
+        mainDbStatusEl.textContent = data.main_db_status ? "Connected" : "Disconnected";
+        mainDbStatusEl.className = data.main_db_status ? "text-success" : "text-danger";
+        
+        // Update Main DB overview
+        const mainDbOverviewEl = document.getElementById("main-db-overview");
+        mainDbOverviewEl.textContent = data.main_db_status ? "All systems operational." : "There is a connection issue with the Main Database.";
+      })
+      .catch(error => console.error("Error refreshing dashboard:", error));
+  }
+  </script>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Reports - Canteen Tool{% endblock %}
+{% block content %}
+<h2 class="mt-4">Reports</h2>
+<form method="post" class="mb-4">
+  <div class="row g-3">
+    <div class="col-md-3">
+      <label class="form-label">From Date</label>
+      <input type="date" name="from_date" class="form-control">
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">To Date</label>
+      <input type="date" name="to_date" class="form-control">
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">Month Selection</label>
+      <select class="form-select" name="month">
+        {% for month in months %}
+          <option value="{{ month }}">{{ month }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="col-md-3">
+      <label class="form-label">User Selection</label>
+      <select class="form-select" name="user">
+        <option value="">All Users</option>
+        {% for user in users %}
+          <option value="{{ user.USRID }}">{{ user.NM }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  <div class="mt-3">
+    <button type="reset" class="btn btn-secondary me-2">Reset Filters</button>
+    <button type="submit" class="btn btn-primary">Apply Filters</button>
+  </div>
+</form>
+
+<!-- Additional UI for displaying report results -->
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Coupon Code</th>
+        <th>User</th>
+        <th>Status</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Report rows go here -->
+    </tbody>
+  </table>
+</div>
+{% endblock %}

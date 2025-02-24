@@ -1,0 +1,4 @@
+ShiftName,StartTime,EndTime
+Shift 1,22:00:00,06:00:00
+Shift 2,06:00:00,15:00:00
+Shift 3,15:00:00,22:00:00
