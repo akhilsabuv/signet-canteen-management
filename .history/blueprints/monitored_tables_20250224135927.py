@@ -3,7 +3,6 @@ import datetime
 import pytz
 import pyodbc
 from flask import Blueprint, jsonify, current_app, session, redirect, url_for
-import win32print
 
 monitored_tables_bp = Blueprint('monitored_tables', __name__, url_prefix='/dashboard')
 
@@ -214,7 +213,15 @@ def get_latest_entry_event_time(usrid):
 ###############################################
 def check_elegibility(event_dt, devuid, usrid):
     """
-    Dynamic meal time eligibility checker that adapts to any changes in canteen_timings table
+    Checks if the event is eligible for canteen service based on dynamic canteen_timings and shifts.
+    
+    Converts event_dt to local time using TIME_ZONE, then queries canteen_timings and shifts.
+    Custom rules:
+      - For "coffee": event must occur before 10:00 AM local.
+      - For "breakfast"/"lunch": event must occur between 07:00 and 14:00 local.
+      - Otherwise, event must be within ±1 hour of the candidate time.
+    
+    Returns True if any timing condition is met; otherwise, False.
     """
     print(f"Checking canteen timing eligibility for event: DEVUID={devuid}, USRID={usrid}, Event Time={event_dt}")
     config = current_app.config
@@ -224,53 +231,50 @@ def check_elegibility(event_dt, devuid, usrid):
     
     eligible = False
     trigger = None
-    
     try:
         conn = get_logger_db_conn()
         cursor = conn.cursor()
-        
-        # Always gets fresh timing data from database
-        # If meal times are changed in database, this will automatically use new timings
-        cursor.execute("""
-            SELECT 
-                canteen_name,
-                start_time,
-                end_time,
-                created_at
-            FROM canteen_timings 
-            WHERE start_time <= CAST(GETDATE() AS TIME)
-            AND end_time >= CAST(GETDATE() AS TIME)
-            ORDER BY start_time
-        """)
-        
-        event_time = event_local.time()
-        
+        cursor.execute("SELECT canteen_name, start_time FROM canteen_timings")
         for row in cursor.fetchall():
-            start_time = row.start_time
-            end_time = row.end_time
-            
-            print(f"Checking {row.canteen_name}: {start_time} - {end_time}")
-            print(f"Current event time: {event_time}")
-            
-            # Dynamic time window check
-            if start_time <= event_time <= end_time:
-                eligible = True
-                trigger = (f"Canteen: {row.canteen_name} "
-                         f"({start_time.strftime('%H:%M')} - {end_time.strftime('%H:%M')})")
-                print(f"Match found: {trigger}")
-                break
-        
+            meal = row.canteen_name.lower()
+            shift_time = row.start_time
+            candidate_dt = get_closest_candidate(event_local, shift_time, tz)
+            diff_seconds = abs((event_local - candidate_dt).total_seconds())
+            print(f"Canteen Timing '{row.canteen_name}': Candidate = {candidate_dt}, diff = {diff_seconds:.0f} sec")
+            if "coffee" in meal:
+                if event_local.hour < 10:
+                    eligible = True
+                    trigger = f"Canteen (Coffee): {row.canteen_name}"
+                    break
+            elif "breakfast" in meal or "lunch" in meal:
+                if 7 <= event_local.hour <= 14:
+                    eligible = True
+                    trigger = f"Canteen (Breakfast/Lunch): {row.canteen_name}"
+                    break
+            else:
+                if diff_seconds <= 3600:
+                    eligible = True
+                    trigger = f"Canteen (Default): {row.canteen_name}"
+                    break
+        if not eligible:
+            cursor.execute("SELECT shift_name, start_time FROM shifts")
+            for row in cursor.fetchall():
+                candidate_dt = get_closest_candidate(event_local, row.start_time, tz)
+                diff_seconds = abs((event_local - candidate_dt).total_seconds())
+                print(f"Shift Timing '{row.shift_name}': Candidate = {candidate_dt}, diff = {diff_seconds:.0f} sec")
+                if diff_seconds <= 3600:
+                    eligible = True
+                    trigger = f"Shift: {row.shift_name}"
+                    break
         conn.close()
-        
     except Exception as e:
         print("Error checking canteen eligibility:", e)
         return False
     
     if eligible:
-        print(f"Timing eligibility met based on {trigger}")
+        print(f"Timing eligibility met based on {trigger}.")
     else:
-        print("No eligible timing found")
-    
+        print("No eligible timing found.")
     return eligible
 
 ###############################################
@@ -438,44 +442,6 @@ def update_monitored_table_counts():
     finally:
         conn.close()
 
-    
-###############################################
-# Print Token Helpers
-###############################################
-
-def print_canteen_token(user_id, meal_name, meal_time):
-    """
-    Enhanced token printing with error handling and formatting
-    """
-    try:
-        CONFIG_FILE = "config.json"
-        from utils import load_config, log_event, print_token, validate_printer
-        
-        # Load configuration
-        config = load_config(CONFIG_FILE)
-        printer_name = config.get("selected_printer", win32print.GetDefaultPrinter())
-
-        # Validate printer
-        if not validate_printer(printer_name):
-            log_event(f"Invalid printer: {printer_name}")
-            return False
-
-        # Print token
-        success = print_token(printer_name, user_id, meal_name, meal_time)
-        
-        if success:
-            log_event(f"Token Printed Successfully - User: {user_id} | {meal_name} | {meal_time}")
-        else:
-            log_event(f"Token Printing Failed - User: {user_id} | {meal_name} | {meal_time}")
-        
-        return success
-
-    except Exception as e:
-        log_event(f"Token Printing Error: {str(e)}")
-        print(f"Error printing token: {str(e)}")
-        return False
-    
-    
 ###############################################
 # Route Endpoints
 ###############################################
@@ -492,4 +458,3 @@ def update_monitored_counts_route():
         return redirect(url_for('auth.login'))
     result = update_monitored_table_counts()
     return jsonify(result)
-

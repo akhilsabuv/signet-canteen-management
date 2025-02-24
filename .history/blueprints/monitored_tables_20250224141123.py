@@ -3,7 +3,6 @@ import datetime
 import pytz
 import pyodbc
 from flask import Blueprint, jsonify, current_app, session, redirect, url_for
-import win32print
 
 monitored_tables_bp = Blueprint('monitored_tables', __name__, url_prefix='/dashboard')
 
@@ -438,44 +437,6 @@ def update_monitored_table_counts():
     finally:
         conn.close()
 
-    
-###############################################
-# Print Token Helpers
-###############################################
-
-def print_canteen_token(user_id, meal_name, meal_time):
-    """
-    Enhanced token printing with error handling and formatting
-    """
-    try:
-        CONFIG_FILE = "config.json"
-        from utils import load_config, log_event, print_token, validate_printer
-        
-        # Load configuration
-        config = load_config(CONFIG_FILE)
-        printer_name = config.get("selected_printer", win32print.GetDefaultPrinter())
-
-        # Validate printer
-        if not validate_printer(printer_name):
-            log_event(f"Invalid printer: {printer_name}")
-            return False
-
-        # Print token
-        success = print_token(printer_name, user_id, meal_name, meal_time)
-        
-        if success:
-            log_event(f"Token Printed Successfully - User: {user_id} | {meal_name} | {meal_time}")
-        else:
-            log_event(f"Token Printing Failed - User: {user_id} | {meal_name} | {meal_time}")
-        
-        return success
-
-    except Exception as e:
-        log_event(f"Token Printing Error: {str(e)}")
-        print(f"Error printing token: {str(e)}")
-        return False
-    
-    
 ###############################################
 # Route Endpoints
 ###############################################
@@ -492,4 +453,3 @@ def update_monitored_counts_route():
         return redirect(url_for('auth.login'))
     result = update_monitored_table_counts()
     return jsonify(result)
-

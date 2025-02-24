@@ -3,7 +3,6 @@ import datetime
 import pytz
 import pyodbc
 from flask import Blueprint, jsonify, current_app, session, redirect, url_for
-import win32print
 
 monitored_tables_bp = Blueprint('monitored_tables', __name__, url_prefix='/dashboard')
 
@@ -438,10 +437,7 @@ def update_monitored_table_counts():
     finally:
         conn.close()
 
-    
-###############################################
-# Print Token Helpers
-###############################################
+
 
 def print_canteen_token(user_id, meal_name, meal_time):
     """
