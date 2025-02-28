@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}Live Triggers - Canteen Tool{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <h3 class="mb-0">
+                <i class="bi bi-broadcast"></i> Live Canteen Triggers
+            </h3>
+            <span id="connection-status" class="badge bg-success">Connected</span>
+        </div>
+        <div class="card-body">
+            <div id="events-container">
+                <!-- Events will be displayed here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<template id="event-template">
+    <div class="alert mb-3 fade show" role="alert">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <strong class="device-name"></strong>
+                <span class="status-message"></span>
+            </div>
+            <small class="text-muted timestamp"></small>
+        </div>
+    </div>
+</template>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const socket = io();
+        const eventsContainer = document.getElementById('events-container');
+        const eventTemplate = document.getElementById('event-template');
+        const connectionStatus = document.getElementById('connection-status');
+        const maxEvents = 5;
+
+        // Socket connection handlers
+        socket.on('connect', () => {
+            connectionStatus.textContent = 'Connected';
+            connectionStatus.className = 'badge bg-success';
+        });
+
+        socket.on('disconnect', () => {
+            connectionStatus.textContent = 'Disconnected';
+            connectionStatus.className = 'badge bg-danger';
+        });
+
+        socket.on('canteen_trigger', function(data) {
+            // Create new event element from template
+            const newEvent = eventTemplate.content.cloneNode(true);
+            const alertDiv = newEvent.querySelector('.alert');
+            const deviceName = newEvent.querySelector('.device-name');
+            const statusMessage = newEvent.querySelector('.status-message');
+            const timestamp = newEvent.querySelector('.timestamp');
+
+            // Set content and styles
+            deviceName.textContent = `Device ${data.device_id}: `;
+            statusMessage.textContent = data.is_valid ? 'Valid Coupon' : 'Invalid Coupon';
+            timestamp.textContent = new Date().toLocaleTimeString();
+
+            // Set appropriate alert style
+            if (data.is_valid) {
+                alertDiv.classList.add('alert-success');
+            } else {
+                alertDiv.classList.add('alert-danger');
+            }
+
+            // Add the new event at the top
+            eventsContainer.insertBefore(alertDiv, eventsContainer.firstChild);
+
+            // Remove old events if exceeding maxEvents
+            while (eventsContainer.children.length > maxEvents) {
+                eventsContainer.lastChild.remove();
+            }
+        });
+
+        // Optional: Add a test trigger button (remove in production)
+        const testButton = document.createElement('button');
+        testButton.className = 'btn btn-sm btn-outline-primary mt-3';
+        testButton.textContent = 'Test Trigger';
+        testButton.onclick = () => {
+            socket.emit('test_trigger');
+        };
+        eventsContainer.after(testButton);
+    });
+</script>
+{% endblock %}

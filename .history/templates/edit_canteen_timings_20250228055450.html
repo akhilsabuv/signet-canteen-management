@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+{% block title %}Edit Canteen Timings{% endblock %}
+{% block content %}
+<h2 class="mt-4">Edit Canteen Timings</h2>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+<form method="POST">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Canteen Name</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Description</th>
+                <th>Shifts</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="timingsTable">
+            {% for timing in timings %}
+            <tr>
+                <td>
+                    <input type="text" name="canteen_name[]" value="{{ timing.canteen_name }}" required>
+                </td>
+                <td>
+                    <input type="time" name="start_time[]" value="{{ timing.start_time }}" required>
+                </td>
+                <td>
+                    <input type="time" name="end_time[]" value="{{ timing.end_time }}" required>
+                </td>
+                <td>
+                    <input type="text" name="description[]" value="{{ timing.description }}">
+                </td>
+                <td class="shift-checkboxes">
+                    {% for shift in shifts %}
+                    <div class="form-check">
+                        <input type="checkbox" 
+                               class="form-check-input" 
+                               name="shifts_{{ loop.parent.loop.index0 }}[]" 
+                               value="{{ shift.id }}"
+                               {% if shift.id in timing.allowed_shifts %} checked {% endif %}>
+                        <label class="form-check-label">{{ shift.shift_name }}</label>
+                    </div>
+                    {% endfor %}
+                </td>
+                <td>
+                    <button type="button" class="btn btn-danger btn-sm remove-row">Remove</button>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <button type="button" class="btn btn-success" id="addRow">Add New Timing</button>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const addRowBtn = document.getElementById('addRow');
+    const timingsTable = document.getElementById('timingsTable');
+
+    // Add new row
+    addRowBtn.addEventListener('click', function() {
+        const rowCount = timingsTable.getElementsByTagName('tr').length;
+        const shiftsHtml = `
+            {% for shift in shifts %}
+            <div class="form-check">
+                <input type="checkbox" 
+                       class="form-check-input" 
+                       name="shifts_${rowCount}[]" 
+                       value="{{ shift.id }}">
+                <label class="form-check-label">{{ shift.shift_name }}</label>
+            </div>
+            {% endfor %}
+        `;
+
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+            <td>
+                <input type="text" name="canteen_name[]" required>
+            </td>
+            <td>
+                <input type="time" name="start_time[]" required>
+            </td>
+            <td>
+                <input type="time" name="end_time[]" required>
+            </td>
+            <td>
+                <input type="text" name="description[]">
+            </td>
+            <td class="shift-checkboxes">
+                ${shiftsHtml}
+            </td>
+            <td>
+                <button type="button" class="btn btn-danger btn-sm remove-row">Remove</button>
+            </td>
+        `;
+        
+        timingsTable.appendChild(newRow);
+    });
+
+    // Remove row
+    timingsTable.addEventListener('click', function(e) {
+        if (e.target.classList.contains('remove-row')) {
+            if (timingsTable.getElementsByTagName('tr').length > 1) {
+                e.target.closest('tr').remove();
+                // Reindex the shifts after removal
+                updateShiftIndexes();
+            } else {
+                alert('At least one timing must remain.');
+            }
+        }
+    });
+
+    // Function to update shift indexes after row removal
+    function updateShiftIndexes() {
+        const rows = timingsTable.getElementsByTagName('tr');
+        rows.forEach((row, index) => {
+            const checkboxes = row.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.name = `shifts_${index}[]`;
+            });
+        });
+    }
+});
+</script>
+
+<style>
+.shift-checkboxes {
+    max-height: 150px;
+    overflow-y: auto;
+    padding: 5px;
+}
+.form-check {
+    margin-bottom: 5px;
+}
+</style>
+{% endblock %}

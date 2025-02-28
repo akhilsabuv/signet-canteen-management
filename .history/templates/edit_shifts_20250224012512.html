@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Edit Shifts{% endblock %}
+{% block content %}
+<h2 class="mt-4">Edit Shifts</h2>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<form method="post">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Shift Name</th>
+        <th>Start Time (HH:MM:SS)</th>
+        <th>End Time (HH:MM:SS)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for shift in shifts %}
+      <tr>
+        <td>
+          <input type="text" class="form-control" name="shift_name_{{ shift.id }}" value="{{ shift.shift_name }}" required>
+        </td>
+        <td>
+          <input type="text" class="form-control" name="shift_start_{{ shift.id }}" value="{{ shift.start_time }}" required>
+        </td>
+        <td>
+          <input type="text" class="form-control" name="shift_end_{{ shift.id }}" value="{{ shift.end_time }}" required>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <button type="submit" class="btn btn-primary">Save Shifts</button>
+</form>
+{% endblock %}

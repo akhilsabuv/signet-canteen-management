@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block title %}Edit Canteen Timings{% endblock %}
+{% block content %}
+<h2 class="mt-4">Edit Canteen Timings</h2>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<form method="post">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Canteen Name</th>
+        <th>Start Time (HH:MM:SS)</th>
+        <th>End Time (HH:MM:SS)</th>
+        <th>Description</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for timing in timings %}
+      <tr>
+        <td>
+          <input type="text" class="form-control" name="canteen_name_{{ timing.id }}" value="{{ timing.canteen_name }}" required>
+          <input type="hidden" name="id_{{ timing.id }}" value="{{ timing.id }}">
+        </td>
+        <td>
+          <input type="text" class="form-control" name="start_time_{{ timing.id }}" value="{{ timing.start_time }}" required>
+        </td>
+        <td>
+          <input type="text" class="form-control" name="end_time_{{ timing.id }}" value="{{ timing.end_time }}" required>
+        </td>
+        <td>
+          <input type="text" class="form-control" name="description_{{ timing.id }}" value="{{ timing.description }}">
+        </td>
+        <td>
+          <button type="button" class="btn btn-danger btn-sm" onclick="removeRow(this)">Remove</button>
+        </td>
+      </tr>
+      {% endfor %}
+      <!-- New row template - hidden by default -->
+      <tr id="new_row_template" style="display: none;">
+        <td>
+          <input type="text" class="form-control" name="new_canteen_name[]" required>
+        </td>
+        <td>
+          <input type="text" class="form-control" name="new_start_time[]" required>
+        </td>
+        <td>
+          <input type="text" class="form-control" name="new_end_time[]" required>
+        </td>
+        <td>
+          <input type="text" class="form-control" name="new_description[]">
+        </td>
+        <td>
+          <button type="button" class="btn btn-danger btn-sm" onclick="removeRow(this)">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-success" onclick="addNewRow()">Add New Timing</button>
+  <button type="submit" class="btn btn-primary">Save Canteen Timings</button>
+</form>
+
+<script>
+function addNewRow() {
+    const template = document.getElementById('new_row_template');
+    const newRow = template.cloneNode(true);
+    newRow.id = ''; // Remove the template id
+    newRow.style.display = ''; // Make the new row visible
+    
+    // Clear the input values
+    const inputs = newRow.getElementsByTagName('input');
+    for (let input of inputs) {
+        input.value = '';
+    }
+    
+    // Insert the new row before the template
+    template.parentNode.insertBefore(newRow, template);
+}
+
+function removeRow(button) {
+    const row = button.closest('tr');
+    if (row.id !== 'new_row_template') {
+        row.remove();
+    }
+}
+</script>
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}Edit Canteen Timings{% endblock %}
+{% block content %}
+<h2 class="mt-4">Edit Canteen Timings</h2>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<form method="post">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Canteen Name</th>
+        <th>Start Time (HH:MM:SS)</th>
+        <th>End Time (HH:MM:SS)</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for timing in timings %}
+      <tr>
+        <td>
+          <input type="text" class="form-control" name="canteen_name_{{ timing.id }}" value="{{ timing.canteen_name }}" required>
+        </td>
+        <td>
+          <input type="text" class="form-control" name="start_time_{{ timing.id }}" value="{{ timing.start_time }}" required>
+        </td>
+        <td>
+          <input type="text" class="form-control" name="end_time_{{ timing.id }}" value="{{ timing.end_time }}" required>
+        </td>
+        <td>
+          <input type="text" class="form-control" name="description_{{ timing.id }}" value="{{ timing.description }}">
+        </td>
+      </tr>
+      {% endfor %}
+      <!-- New row form -->
+      <tr id="new_row_template" class="new-timing-row">
+        <td>
+          <input type="text" class="form-control" name="new_canteen_name[]" required>
+        </td>
+        <td>
+          <input type="text" class="form-control" name="new_start_time[]" required>
+        </td>
+        <td>
+          <input type="text" class="form-control" name="new_end_time[]" required>
+        </td>
+        <td>
+          <input type="text" class="form-control" name="new_description[]">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-success mb-3" onclick="addNewRow()">Add New Timing</button>
+  <button type="submit" class="btn btn-primary">Save Canteen Timings</button>
+</form>
+
+<script>
+function addNewRow() {
+    const template = document.getElementById('new_row_template');
+    const newRow = template.cloneNode(true);
+    newRow.id = ''; // Remove the template id
+    template.parentNode.insertBefore(newRow, template);
+}
+</script>
+{% endblock %}
