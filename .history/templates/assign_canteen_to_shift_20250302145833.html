@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assign Canteen to Shift</title>
+  <!-- Include Bootstrap for styling (optional) -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-5">
+    <h1>Assign Canteen to Shift</h1>
+    
+    <!-- Display flash messages if any -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    
+    <form method="post" id="canteenForm">
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Canteen</th>
+              <th>Shifts</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for canteen in canteen_timings %}
+            <tr>
+              <td>
+                {{ canteen.canteen_name }}
+                <!-- Hidden input to store the canteen ID -->
+                <input type="hidden" name="canteen_id[]" value="{{ canteen.id }}">
+              </td>
+              <td>
+                {% for shift in shifts %}
+                <div class="form-check">
+                  <!-- Each checkbox represents a shift for this canteen -->
+                  <input class="form-check-input" type="checkbox" name="shift_ids[]" value="{{ shift.id }}" id="shift_{{ canteen.id }}_{{ shift.id }}">
+                  <label class="form-check-label" for="shift_{{ canteen.id }}_{{ shift.id }}">{{ shift.shift_name }}</label>
+                </div>
+                {% endfor %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-3">
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </form>
+
+    <script>
+      // Intercept the form submission to capture combinations
+      document.getElementById('canteenForm').addEventListener('submit', function(e) {
+        // Prevent the default form submission
+        e.preventDefault();
+        
+        let combinations = [];
+        
+        // Loop through each table row
+        document.querySelectorAll('table tbody tr').forEach(function(row) {
+          // Get the hidden canteen_id for the current row
+          const canteenInput = row.querySelector('input[name="canteen_id[]"]');
+          const canteenId = canteenInput ? canteenInput.value : null;
+          
+          // For each checked checkbox, create a combination object
+          row.querySelectorAll('input[type="checkbox"]:checked').forEach(function(checkbox) {
+            combinations.push({
+              canteen_id: canteenId,
+              shift_id: checkbox.value
+            });
+          });
+        });
+        
+        // Log the combinations to the console (or send via AJAX)
+        console.log('Combinations:', combinations);
+        
+        // After processing, submit the form normally
+        e.target.submit();
+      });
+    </script>
+  </div>
+</body>
+</html>

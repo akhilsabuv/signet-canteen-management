@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block title %}Canteen Shift Assignments{% endblock %}
+{% block content %}
+<h2 class="mt-4">Canteen Timings</h2>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<form method="post" id="canteenForm">
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Canteen ID</th>
+            <th>Shift IDs</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for canteen in canteen_timings %}
+          <tr>
+            <td>
+              {{ canteen.canteen_name }}
+              <input type="hidden" name="canteen_id[]" value="{{ canteen.id }}">
+            </td>
+            <td>
+              {% for shift in shifts %}
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="shift_ids[]" value="{{ shift.id }}" id="shift_{{ canteen.id }}_{{ shift.id }}" {% if shift.id in canteen.assigned_shifts %}checked{% endif %}>
+                <label class="form-check-label" for="shift_{{ canteen.id }}_{{ shift.id }}">{{ shift.shift_name }}</label>
+              </div>
+              {% endfor %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  
+    <div class="mt-3">
+      <button type="submit" class="btn btn-primary">Save</button>
+    </div>
+  </form>
+{% endblock %}
+<script>
+    document.getElementById('canteenForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent the form from submitting right away
+      
+      let combinations = [];
+      
+      // Loop through each row of the table
+      document.querySelectorAll('table tbody tr').forEach(function(row) {
+        // Get the canteen id from the hidden input in this row
+        const canteenInput = row.querySelector('input[name="canteen_id[]"]');
+        const canteenId = canteenInput ? canteenInput.value : null;
+        
+        // Find all checked checkboxes for this canteen row
+        row.querySelectorAll('input[type="checkbox"]:checked').forEach(function(checkbox) {
+          combinations.push({
+            canteen_id: canteenId,
+            shift_id: checkbox.value
+          });
+        });
+      });
+      
+      // Log the result in the console or process it further
+      console.log('Combinations:', combinations);
+      
+      // Optionally, you could send these combinations via an AJAX request, 
+      // or re-enable the form submission if needed.
+    });
+    </script>

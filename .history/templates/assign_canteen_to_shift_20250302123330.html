@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% block title %}Assign Canteen to Shift{% endblock %}
+{% block content %}
+<h2 class="mt-4">Assign Canteen to Shift</h2>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+<form method="post">
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Shift</th>
+          <th>Available Canteens</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="assignmentTableBody">
+        {% for shift in shifts %}
+        <tr>
+          <td>
+            <input type="hidden" name="shift_id" value="{{ shift.id }}">
+            {{ shift.shift_name }} ({{ shift.start_time }} - {{ shift.end_time }})
+          </td>
+          <td>
+            <div class="form-check">
+              {% for canteen in canteens %}
+              <div class="mb-2">
+                <input class="form-check-input" type="checkbox" 
+                       name="canteen_id_{{ shift.id }}" 
+                       value="{{ canteen.id }}"
+                       id="canteen_{{ shift.id }}_{{ canteen.id }}"
+                       {% if canteen.id == shift.assigned_canteen_id %}checked{% endif %}>
+                <label class="form-check-label" for="canteen_{{ shift.id }}_{{ canteen.id }}">
+                  {{ canteen.canteen_name }} ({{ canteen.start_time }} - {{ canteen.end_time }})
+                </label>
+              </div>
+              {% endfor %}
+            </div>
+          </td>
+          <td>
+            <button type="button" class="btn btn-danger btn-sm" onclick="removeAssignment(this)">Remove Assignment</button>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="mt-3 mb-3">
+    <button type="button" class="btn btn-success" onclick="addNewAssignment()">Add New Assignment</button>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+  </div>
+</form>
+
+<script>
+function addNewAssignment() {
+  const tbody = document.getElementById('assignmentTableBody');
+  const shifts = {{ shifts|tojson|safe }};
+  const canteens = {{ canteens|tojson|safe }};
+  
+  let shiftOptions = shifts.map(shift => 
+    `<option value="${shift.id}">${shift.shift_name} (${shift.start_time} - ${shift.end_time})</option>`
+  ).join('');
+
+  let canteenCheckboxes = canteens.map(canteen =>
+    `<div class="mb-2">
+      <input class="form-check-input" type="checkbox" 
+             name="canteen_id_new" 
+             value="${canteen.id}"
+             id="canteen_new_${canteen.id}">
+      <label class="form-check-label" for="canteen_new_${canteen.id}">
+        ${canteen.canteen_name} (${canteen.start_time} - ${canteen.end_time})
+      </label>
+    </div>`
+  ).join('');
+
+  const newRow = `
+    <tr>
+      <td>
+        <select class="form-select" name="shift_id" required>
+          <option value="">Select Shift</option>
+          ${shiftOptions}
+        </select>
+      </td>
+      <td>
+        <div class="form-check">
+          ${canteenCheckboxes}
+        </div>
+      </td>
+      <td>
+        <button type="button" class="btn btn-danger btn-sm" onclick="removeAssignment(this)">Remove Assignment</button>
+      </td>
+    </tr>
+  `;
+  tbody.insertAdjacentHTML('beforeend', newRow);
+}
+
+function removeAssignment(button) {
+  button.closest('tr').remove();
+}
+</script>
+{% endblock %}

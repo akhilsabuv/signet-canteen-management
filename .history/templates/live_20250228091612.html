@@ -1,0 +1,232 @@
+{% extends "base.html" %}
+{% block title %}Live View{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="card shadow-lg mt-4">
+        <div class="card-header bg-primary text-white">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2 class="h4 mb-0">Live View</h2>
+                <div class="d-flex align-items-center">
+                    <span class="badge bg-light text-dark me-2">
+                        Next refresh in: <span id="timer">2</span>s
+                    </span>
+                    <span class="badge bg-success" id="connectionStatus">Connected</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Stats Section -->
+        <div class="card-body">
+            <div class="row mb-4">
+                <div class="col-md-3">
+                    <div class="card bg-info text-white">
+                        <div class="card-body">
+                            <h5>Total Meals Today</h5>
+                            <h2 id="totalMeals">0</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-success text-white">
+                        <div class="card-body">
+                            <h5>Active Users</h5>
+                            <h2 id="activeUsers">0</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-warning text-white">
+                        <div class="card-body">
+                            <h5>Current Shift</h5>
+                            <h2 id="currentShift">-</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-danger text-white">
+                        <div class="card-body">
+                            <h5>Today's Value</h5>
+                            <h2 id="todayValue">₹0</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Split Section -->
+            <div class="row">
+                <!-- Left Side - Recent Users -->
+                <div class="col-md-6">
+                    <div class="card" style="height: calc(100vh - 300px);">
+                        <div class="card-header bg-light">
+                            <h5 class="mb-0">Recent User Activity</h5>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="list-group list-group-flush" id="recentUsers" 
+                                 style="height: 100%; overflow-y: auto;">
+                                <!-- User list will be populated via JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Canteen Stats -->
+                <div class="col-md-6">
+                    <div class="card" style="height: calc(100vh - 300px);">
+                        <div class="card-header bg-light">
+                            <h5 class="mb-0">Canteen Timings & Meals</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover" id="canteenStats">
+                                    <thead>
+                                        <tr>
+                                            <th>Canteen</th>
+                                            <th>Timing</th>
+                                            <th>Meals Issued</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Canteen data will be populated via JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+let timer = 2;
+let isConnected = true;
+
+function updateTimer() {
+    document.getElementById('timer').textContent = timer;
+    if (timer === 0) {
+        refreshData();
+        timer = 2;
+    } else {
+        timer--;
+    }
+}
+
+function updateConnectionStatus(connected) {
+    const statusElement = document.getElementById('connectionStatus');
+    if (connected) {
+        statusElement.className = 'badge bg-success';
+        statusElement.textContent = 'Connected';
+    } else {
+        statusElement.className = 'badge bg-danger';
+        statusElement.textContent = 'Disconnected';
+    }
+}
+
+function refreshData() {
+    fetch('{{ url_for("live.data") }}')
+        .then(response => response.json())
+        .then(data => {
+            updateStats(data.stats);
+            updateRecentUsers(data.recent_users);
+            updateCanteenStats(data.canteen_stats);
+            updateConnectionStatus(true);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            updateConnectionStatus(false);
+        });
+}
+
+function updateStats(stats) {
+    document.getElementById('totalMeals').textContent = stats.total_meals;
+    document.getElementById('activeUsers').textContent = stats.active_users;
+    document.getElementById('currentShift').textContent = stats.current_shift;
+    document.getElementById('todayValue').textContent = '₹' + stats.today_value;
+}
+
+function updateRecentUsers(users) {
+    const container = document.getElementById('recentUsers');
+    container.innerHTML = '';
+    
+    users.forEach(user => {
+        const item = document.createElement('div');
+        item.className = 'list-group-item';
+        item.innerHTML = `
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h6 class="mb-0">${user.name}</h6>
+                    <small class="text-muted">ID: ${user.id}</small>
+                </div>
+                <div class="text-end">
+                    <div>${user.time}</div>
+                    <small class="badge bg-${user.status === 'Active' ? 'success' : 'secondary'}">
+                        ${user.status}
+                    </small>
+                </div>
+            </div>
+        `;
+        container.appendChild(item);
+    });
+}
+
+function updateCanteenStats(stats) {
+    const tbody = document.getElementById('canteenStats').getElementsByTagName('tbody')[0];
+    tbody.innerHTML = '';
+    
+    stats.forEach(canteen => {
+        const row = tbody.insertRow();
+        row.innerHTML = `
+            <td>${canteen.name}</td>
+            <td>${canteen.timing}</td>
+            <td>${canteen.meals_issued}</td>
+            <td>
+                <span class="badge bg-${canteen.is_active ? 'success' : 'secondary'}">
+                    ${canteen.is_active ? 'Active' : 'Inactive'}
+                </span>
+            </td>
+        `;
+    });
+}
+
+// Initial load
+refreshData();
+
+// Update timer every second
+setInterval(updateTimer, 1000);
+</script>
+
+<style>
+.card {
+    border: none;
+    margin-bottom: 1rem;
+}
+.list-group-item {
+    border-left: none;
+    border-right: none;
+}
+.list-group-item:first-child {
+    border-top: none;
+}
+.table th {
+    background-color: #f8f9fa;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+#recentUsers::-webkit-scrollbar {
+    width: 6px;
+}
+#recentUsers::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+#recentUsers::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+#recentUsers::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+</style>
+{% endblock %}

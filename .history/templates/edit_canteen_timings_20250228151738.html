@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+{% block title %}Edit Canteen Timings{% endblock %}
+{% block content %}
+<div class="container-fluid mt-4">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h2 class="mb-0">Edit Canteen Timings</h2>
+        </div>
+        <div class="card-body">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <form method="POST">
+                <div class="table-responsive">
+                    <table class="table table-hover table-bordered">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Canteen Name</th>
+                                <th>Start Time</th>
+                                <th>End Time</th>
+                                <th>Description</th>
+                                <th>Shifts</th>
+                                <th style="width: 100px;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="timingsTable">
+                            {% for timing in timings %}
+                            <tr class="align-middle">
+                                <td>
+                                    <input type="text" class="form-control" name="canteen_name[]" 
+                                           value="{{ timing.canteen_name }}" required>
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control" name="start_time[]" 
+                                           value="{{ timing.start_time }}" required>
+                                </td>
+                                <td>
+                                    <input type="time" class="form-control" name="end_time[]" 
+                                           value="{{ timing.end_time }}" required>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" name="description[]" 
+                                           value="{{ timing.description }}">
+                                </td>
+                                <td class="shift-checkboxes">
+                                    {% set outer_loop = loop %}
+                                    {% for shift in allowed_shifts %}
+                                    <div class="form-check form-check-inline">
+                                        <input type="checkbox" 
+                                               class="form-check-input" 
+                                               name="shifts_{{ outer_loop.index0 }}" 
+                                               value="{{ shift }}"
+                                               {% if shift in timing.shifts %}checked{% endif %}>
+                                        <label class="form-check-label">{{ shift }}</label>
+                                    </div>
+                                    {% endfor %}
+                                </td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-danger btn-sm remove-row">
+                                        <i class="fas fa-trash"></i> Remove
+                                    </button>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="d-flex gap-2 mt-3">
+                    <button type="button" class="btn btn-success" id="addRow">
+                        <i class="fas fa-plus"></i> Add New Timing
+                    </button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save Changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+.shift-checkboxes {
+    max-height: 150px;
+    overflow-y: auto;
+    background-color: #f8f9fa;
+    padding: 0.5rem;
+}
+.form-check-inline {
+    margin-right: 1rem;
+}
+.table td {
+    vertical-align: middle;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const addRowBtn = document.getElementById('addRow');
+    const timingsTable = document.getElementById('timingsTable');
+
+    addRowBtn.addEventListener('click', function() {
+        const rowCount = timingsTable.getElementsByTagName('tr').length;
+        const newRow = document.createElement('tr');
+        newRow.className = 'align-middle';
+        
+        const shiftsHtml = `
+            {% for shift in allowed_shifts %}
+            <div class="form-check form-check-inline">
+                <input type="checkbox" 
+                       class="form-check-input" 
+                       name="shifts_${rowCount}[]" 
+                       value="{{ shift }}">
+                <label class="form-check-label">{{ shift }}</label>
+            </div>
+            {% endfor %}
+        `;
+
+        newRow.innerHTML = `
+            <td>
+                <input type="text" class="form-control" name="canteen_name[]" required>
+            </td>
+            <td>
+                <input type="time" class="form-control" name="start_time[]" required>
+            </td>
+            <td>
+                <input type="time" class="form-control" name="end_time[]" required>
+            </td>
+            <td>
+                <input type="text" class="form-control" name="description[]">
+            </td>
+            <td class="shift-checkboxes">
+                ${shiftsHtml}
+            </td>
+            <td class="text-center">
+                <button type="button" class="btn btn-danger btn-sm remove-row">
+                    <i class="fas fa-trash"></i> Remove
+                </button>
+            </td>
+        `;
+        
+        timingsTable.appendChild(newRow);
+    });
+
+    timingsTable.addEventListener('click', function(e) {
+        if (e.target.closest('.remove-row')) {
+            const row = e.target.closest('tr');
+            if (timingsTable.getElementsByTagName('tr').length > 1) {
+                row.remove();
+            } else {
+                alert('At least one timing must remain.');
+            }
+        }
+    });
+});
+</script>
+{% endblock %}

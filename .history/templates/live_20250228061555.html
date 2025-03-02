@@ -1,0 +1,169 @@
+{% extends "base.html" %}
+{% block title %}Live View - Canteen Tool{% endblock %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow-lg mt-4">
+                <div class="card-header bg-primary text-white">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h2 class="h4 mb-0">
+                            <i class="fas fa-broadcast-tower"></i> Live View
+                            <small class="badge bg-success" id="status">Connected</small>
+                        </h2>
+                        <div class="btn-group">
+                            <button class="btn btn-light" onclick="refreshData()">
+                                <i class="fas fa-sync-alt"></i> Refresh
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <!-- Stats Cards -->
+                    <div class="row mb-4">
+                        <div class="col-md-3">
+                            <div class="card bg-info text-white">
+                                <div class="card-body">
+                                    <h5 class="card-title">Today's Coupons</h5>
+                                    <h3 class="mb-0" id="todayCoupons">0</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card bg-success text-white">
+                                <div class="card-body">
+                                    <h5 class="card-title">Active Users</h5>
+                                    <h3 class="mb-0" id="activeUsers">0</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card bg-warning text-white">
+                                <div class="card-body">
+                                    <h5 class="card-title">Current Shift</h5>
+                                    <h3 class="mb-0" id="currentShift">-</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card bg-danger text-white">
+                                <div class="card-body">
+                                    <h5 class="card-title">Today's Value</h5>
+                                    <h3 class="mb-0" id="todayValue">₹0</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity Table -->
+                    <div class="card">
+                        <div class="card-header bg-light">
+                            <h5 class="mb-0">Recent Activity</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover" id="liveTable">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th><i class="fas fa-clock"></i> Time</th>
+                                            <th><i class="fas fa-user"></i> User</th>
+                                            <th><i class="fas fa-ticket-alt"></i> Coupon</th>
+                                            <th><i class="fas fa-utensils"></i> Canteen</th>
+                                            <th><i class="fas fa-rupee-sign"></i> Value</th>
+                                            <th><i class="fas fa-info-circle"></i> Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="liveData">
+                                        <!-- Data will be populated via JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+let lastUpdate = new Date();
+
+function refreshData() {
+    fetch('{{ url_for("live.get_live_data") }}')
+        .then(response => response.json())
+        .then(data => {
+            updateDashboard(data);
+            lastUpdate = new Date();
+            document.getElementById('status').textContent = 'Connected';
+            document.getElementById('status').className = 'badge bg-success';
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('status').textContent = 'Disconnected';
+            document.getElementById('status').className = 'badge bg-danger';
+        });
+}
+
+function updateDashboard(data) {
+    // Update stats
+    document.getElementById('todayCoupons').textContent = data.stats.today_coupons;
+    document.getElementById('activeUsers').textContent = data.stats.active_users;
+    document.getElementById('currentShift').textContent = data.stats.current_shift;
+    document.getElementById('todayValue').textContent = '₹' + data.stats.today_value;
+
+    // Update table
+    const tbody = document.getElementById('liveData');
+    tbody.innerHTML = ''; // Clear existing data
+
+    data.recent_activity.forEach(activity => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${activity.time}</td>
+            <td>${activity.user_name}</td>
+            <td>${activity.coupon_code}</td>
+            <td>${activity.canteen}</td>
+            <td>₹${activity.value}</td>
+            <td><span class="badge bg-${activity.status === 'Active' ? 'success' : 'secondary'}">${activity.status}</span></td>
+        `;
+        tbody.appendChild(row);
+    });
+}
+
+// Initial load
+refreshData();
+
+// Auto refresh every 30 seconds
+setInterval(refreshData, 30000);
+
+// Check connection status
+setInterval(() => {
+    const now = new Date();
+    if (now - lastUpdate > 35000) { // If no update in 35 seconds
+        document.getElementById('status').textContent = 'Disconnected';
+        document.getElementById('status').className = 'badge bg-danger';
+    }
+}, 5000);
+</script>
+
+<style>
+.card {
+    border: none;
+    margin-bottom: 1rem;
+}
+.table th {
+    font-weight: 600;
+}
+.badge {
+    padding: 0.5em 0.8em;
+}
+#status {
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+}
+.card-title {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+</style>
+{% endblock %}

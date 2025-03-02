@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% block title %}Edit Shifts{% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Edit Shifts</h2>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }}">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    <form method="post" action="{{ url_for('system.edit_shifts') }}">
+        <div class="table-responsive">
+            <table id="shiftsTable" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Shift Name</th>
+                        <th>Start Time (HH:MM:SS)</th>
+                        <th>End Time (HH:MM:SS)</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for shift in shifts %}
+                    <tr class="align-middle">
+                        <td>
+                            <input type="hidden" name="id" value="{{ shift.id }}">
+                        </td>
+                        <td>
+                            <input type="text" class="form-control" name="shift_name" value="{{ shift.shift_name }}" required>
+                        </td>
+                        <td>
+                            <input type="time" class="form-control" name="shift_start" value="{{ shift.start_time }}" required>
+                        </td>
+                        <td>
+                            <input type="time" class="form-control" name="shift_end" value="{{ shift.end_time }}" required>
+                        </td>
+                        <td class="text-center">
+                            <button type="button" class="btn btn-danger btn-sm remove-row">
+                                <i class="fas fa-trash"></i> Remove
+                            </button>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="mt-3 mb-3">
+            <button type="button" id="addShiftRow" class="btn btn-success">
+                <i class="fas fa-plus"></i> Add New Shift
+            </button>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+    </form>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const addShiftBtn = document.getElementById('addShiftRow');
+    const shiftsTable = document.querySelector('#shiftsTable tbody');
+
+    // Add new row functionality
+    addShiftBtn.addEventListener('click', function() {
+        const newRow = document.createElement('tr');
+        newRow.className = 'align-middle';
+        
+        const html = `
+            <td>
+                <input type="hidden" name="id" value="NULL">
+            </td>
+            <td>
+                <input type="text" class="form-control" name="shift_name" required>
+            </td>
+            <td>
+                <input type="time" class="form-control" name="shift_start" required>
+            </td>
+            <td>
+                <input type="time" class="form-control" name="shift_end" required>
+            </td>
+            <td class="text-center">
+                <button type="button" class="btn btn-danger btn-sm remove-row">
+                    <i class="fas fa-trash"></i> Remove
+                </button>
+            </td>
+        `;
+        
+        newRow.innerHTML = html;
+        shiftsTable.appendChild(newRow);
+    });
+
+    // Remove row on click
+    document.addEventListener('click', function(e) {
+        if(e.target.closest('.remove-row')) {
+            e.target.closest('tr').remove();
+        }
+    });
+});
+</script>
+
+<style>
+.table td {
+    vertical-align: middle;
+}
+</style>
+{% endblock %}
