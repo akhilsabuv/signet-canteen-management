@@ -286,7 +286,7 @@ def savetodb(usrid, event_dt, event_time, latest_entry, shift_start_time, status
 
     # params= (int(usrid), event_dt, event_time, latest_entry, shift_start_time, status, description)
 
-    # print(params)
+    print(params)
     conn = get_logger_db_conn()
     cursor = conn.cursor()
     cursor.execute(sql, params)
