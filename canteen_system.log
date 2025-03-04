@@ -2898,3 +2898,947 @@ Processing row 4
 2025-03-03 05:02:04,411 - INFO -  * Restarting with stat
 2025-03-03 05:02:05,498 - WARNING -  * Debugger is active!
 2025-03-03 05:02:05,506 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 05:05:17,063 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-03 05:05:17,063 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-03 05:05:17,069 - INFO -  * Restarting with stat
+2025-03-03 05:05:18,569 - WARNING -  * Debugger is active!
+2025-03-03 05:05:18,577 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 05:05:18,805 - INFO - 127.0.0.1 - - [03/Mar/2025 05:05:18] "GET / HTTP/1.1" 200 -
+2025-03-03 05:05:18,811 - INFO - 127.0.0.1 - - [03/Mar/2025 05:05:18] "GET / HTTP/1.1" 200 -
+2025-03-03 05:05:19,174 - INFO - 127.0.0.1 - - [03/Mar/2025 05:05:19] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 05:05:25,691 - INFO - 127.0.0.1 - - [03/Mar/2025 05:05:25] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-03-03 05:05:25,784 - INFO - 127.0.0.1 - - [03/Mar/2025 05:05:25] "GET /dashboard/ HTTP/1.1" 200 -
+2025-03-03 05:05:25,966 - INFO - 127.0.0.1 - - [03/Mar/2025 05:05:25] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 05:05:26,550 - INFO - 127.0.0.1 - - [03/Mar/2025 05:05:26] "GET /dashboard/monitored-tables HTTP/1.1" 200 -
+2025-03-03 05:13:07,223 - INFO - 127.0.0.1 - - [03/Mar/2025 05:13:07] "GET /dashboard/ HTTP/1.1" 200 -
+2025-03-03 05:13:07,364 - INFO - 127.0.0.1 - - [03/Mar/2025 05:13:07] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 05:13:07,729 - INFO - 127.0.0.1 - - [03/Mar/2025 05:13:07] "GET /dashboard/monitored-tables HTTP/1.1" 200 -
+2025-03-03 05:13:16,328 - INFO - 127.0.0.1 - - [03/Mar/2025 05:13:16] "GET /system/live HTTP/1.1" 200 -
+2025-03-03 05:13:16,460 - INFO - 127.0.0.1 - - [03/Mar/2025 05:13:16] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 05:13:16,698 - INFO - 127.0.0.1 - - [03/Mar/2025 05:13:16] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-03 05:13:20,001 - INFO - 127.0.0.1 - - [03/Mar/2025 05:13:20] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-03 05:13:22,692 - INFO - 127.0.0.1 - - [03/Mar/2025 05:13:22] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-03 05:13:25,990 - INFO - 127.0.0.1 - - [03/Mar/2025 05:13:25] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-03 05:13:28,681 - INFO - 127.0.0.1 - - [03/Mar/2025 05:13:28] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-03 05:13:31,993 - INFO - 127.0.0.1 - - [03/Mar/2025 05:13:31] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-03 05:13:32,240 - INFO - 127.0.0.1 - - [03/Mar/2025 05:13:32] "GET /dashboard/ HTTP/1.1" 200 -
+2025-03-03 05:13:32,506 - INFO - 127.0.0.1 - - [03/Mar/2025 05:13:32] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 05:13:32,729 - INFO - 127.0.0.1 - - [03/Mar/2025 05:13:32] "GET /dashboard/monitored-tables HTTP/1.1" 200 -
+2025-03-03 05:14:55,640 - INFO - 127.0.0.1 - - [03/Mar/2025 05:14:55] "GET /dashboard/ HTTP/1.1" 200 -
+2025-03-03 05:14:55,736 - INFO - 127.0.0.1 - - [03/Mar/2025 05:14:55] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 05:14:56,475 - INFO - 127.0.0.1 - - [03/Mar/2025 05:14:56] "GET /dashboard/monitored-tables HTTP/1.1" 200 -
+2025-03-03 08:51:27,247 - INFO - 127.0.0.1 - - [03/Mar/2025 08:51:27] "GET /system/live HTTP/1.1" 200 -
+2025-03-03 08:51:27,463 - INFO - 127.0.0.1 - - [03/Mar/2025 08:51:27] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 08:51:28,468 - INFO - 127.0.0.1 - - [03/Mar/2025 08:51:28] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-03 08:51:30,121 - INFO - 127.0.0.1 - - [03/Mar/2025 08:51:30] "GET /reports/ HTTP/1.1" 200 -
+2025-03-03 08:51:30,267 - INFO - 127.0.0.1 - - [03/Mar/2025 08:51:30] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 08:51:31,392 - INFO - 127.0.0.1 - - [03/Mar/2025 08:51:31] "GET /configuration/ HTTP/1.1" 200 -
+2025-03-03 08:51:31,662 - INFO - 127.0.0.1 - - [03/Mar/2025 08:51:31] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 08:51:32,717 - INFO - 127.0.0.1 - - [03/Mar/2025 08:51:32] "GET /devices/ HTTP/1.1" 200 -
+2025-03-03 08:51:32,858 - INFO - 127.0.0.1 - - [03/Mar/2025 08:51:32] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 08:51:38,570 - INFO - 127.0.0.1 - - [03/Mar/2025 08:51:38] "[32mPOST /devices/ HTTP/1.1[0m" 302 -
+2025-03-03 08:51:38,815 - INFO - 127.0.0.1 - - [03/Mar/2025 08:51:38] "GET /devices/ HTTP/1.1" 200 -
+2025-03-03 08:51:39,203 - INFO - 127.0.0.1 - - [03/Mar/2025 08:51:39] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 08:51:41,268 - INFO - 127.0.0.1 - - [03/Mar/2025 08:51:41] "GET /devices/ HTTP/1.1" 200 -
+2025-03-03 08:51:41,574 - INFO - 127.0.0.1 - - [03/Mar/2025 08:51:41] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 08:51:50,927 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-03 08:51:50,927 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-03 08:51:50,932 - INFO -  * Restarting with stat
+2025-03-03 08:51:51,813 - WARNING -  * Debugger is active!
+2025-03-03 08:51:51,821 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 08:51:54,324 - INFO - 127.0.0.1 - - [03/Mar/2025 08:51:54] "GET /devices/ HTTP/1.1" 200 -
+2025-03-03 08:51:54,505 - INFO - 127.0.0.1 - - [03/Mar/2025 08:51:54] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 08:52:14,699 - INFO - 127.0.0.1 - - [03/Mar/2025 08:52:14] "GET /reports/ HTTP/1.1" 200 -
+2025-03-03 08:52:14,921 - INFO - 127.0.0.1 - - [03/Mar/2025 08:52:14] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 08:52:16,204 - INFO - 127.0.0.1 - - [03/Mar/2025 08:52:16] "GET /system/live HTTP/1.1" 200 -
+2025-03-03 08:52:16,359 - INFO - 127.0.0.1 - - [03/Mar/2025 08:52:16] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 08:52:16,514 - INFO - 127.0.0.1 - - [03/Mar/2025 08:52:16] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-03 08:52:17,256 - INFO - 127.0.0.1 - - [03/Mar/2025 08:52:17] "GET /dashboard/ HTTP/1.1" 200 -
+2025-03-03 08:52:17,391 - INFO - 127.0.0.1 - - [03/Mar/2025 08:52:17] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 08:52:17,570 - INFO - 127.0.0.1 - - [03/Mar/2025 08:52:17] "GET /dashboard/monitored-tables HTTP/1.1" 200 -
+2025-03-03 08:53:59,207 - INFO - 127.0.0.1 - - [03/Mar/2025 08:53:59] "GET /devices/ HTTP/1.1" 200 -
+2025-03-03 08:53:59,361 - INFO - 127.0.0.1 - - [03/Mar/2025 08:53:59] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 08:54:03,324 - INFO - 127.0.0.1 - - [03/Mar/2025 08:54:03] "[32mPOST /devices/ HTTP/1.1[0m" 302 -
+2025-03-03 08:54:03,625 - INFO - 127.0.0.1 - - [03/Mar/2025 08:54:03] "GET /devices/ HTTP/1.1" 200 -
+2025-03-03 08:54:04,061 - INFO - 127.0.0.1 - - [03/Mar/2025 08:54:04] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 08:54:07,933 - INFO - 127.0.0.1 - - [03/Mar/2025 08:54:07] "[32mPOST /devices/ HTTP/1.1[0m" 302 -
+2025-03-03 08:54:08,165 - INFO - 127.0.0.1 - - [03/Mar/2025 08:54:08] "GET /devices/ HTTP/1.1" 200 -
+2025-03-03 08:54:08,598 - INFO - 127.0.0.1 - - [03/Mar/2025 08:54:08] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 09:01:32,794 - INFO - 127.0.0.1 - - [03/Mar/2025 09:01:32] "GET /system/assign_canteen_to_shift HTTP/1.1" 200 -
+2025-03-03 09:01:33,075 - INFO - 127.0.0.1 - - [03/Mar/2025 09:01:33] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 09:01:40,578 - INFO - 127.0.0.1 - - [03/Mar/2025 09:01:40] "[32mPOST /system/assign_canteen_to_shift HTTP/1.1[0m" 302 -
+2025-03-03 09:01:40,591 - INFO - 127.0.0.1 - - [03/Mar/2025 09:01:40] "GET /system/assign_canteen_to_shift HTTP/1.1" 200 -
+2025-03-03 09:01:40,814 - INFO - 127.0.0.1 - - [03/Mar/2025 09:01:40] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 09:04:50,043 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 09:04:50,139 - INFO -  * Restarting with stat
+2025-03-03 09:04:51,182 - WARNING -  * Debugger is active!
+2025-03-03 09:04:51,191 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 09:17:25,730 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 09:17:25,785 - INFO -  * Restarting with stat
+2025-03-03 09:17:26,675 - WARNING -  * Debugger is active!
+2025-03-03 09:17:26,683 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 09:18:47,039 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 09:18:47,104 - INFO -  * Restarting with stat
+2025-03-03 09:18:47,994 - WARNING -  * Debugger is active!
+2025-03-03 09:18:48,001 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 09:18:50,311 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 09:18:50,370 - INFO -  * Restarting with stat
+2025-03-03 09:18:51,170 - WARNING -  * Debugger is active!
+2025-03-03 09:18:51,177 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 14:55:21,908 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 14:55:22,023 - INFO -  * Restarting with stat
+2025-03-03 15:03:47,060 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-03 15:03:47,060 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-03 15:03:47,063 - INFO -  * Restarting with stat
+2025-03-03 15:03:48,042 - WARNING -  * Debugger is active!
+2025-03-03 15:03:48,053 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 15:04:00,063 - INFO - 127.0.0.1 - - [03/Mar/2025 15:04:00] "GET /system/assign_canteen_to_shift HTTP/1.1" 200 -
+2025-03-03 15:04:00,413 - INFO - 127.0.0.1 - - [03/Mar/2025 15:04:00] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 15:04:03,189 - INFO - 127.0.0.1 - - [03/Mar/2025 15:04:03] "GET /system/live HTTP/1.1" 200 -
+2025-03-03 15:04:03,483 - INFO - 127.0.0.1 - - [03/Mar/2025 15:04:03] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 15:04:03,813 - INFO - 127.0.0.1 - - [03/Mar/2025 15:04:03] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-03 15:04:06,509 - INFO - 127.0.0.1 - - [03/Mar/2025 15:04:06] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-03 15:04:09,809 - INFO - 127.0.0.1 - - [03/Mar/2025 15:04:09] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-03 15:04:12,496 - INFO - 127.0.0.1 - - [03/Mar/2025 15:04:12] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-03 15:04:15,809 - INFO - 127.0.0.1 - - [03/Mar/2025 15:04:15] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-03 15:04:18,507 - INFO - 127.0.0.1 - - [03/Mar/2025 15:04:18] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-03 15:04:21,819 - INFO - 127.0.0.1 - - [03/Mar/2025 15:04:21] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-03 15:04:24,498 - INFO - 127.0.0.1 - - [03/Mar/2025 15:04:24] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-03 15:04:27,828 - INFO - 127.0.0.1 - - [03/Mar/2025 15:04:27] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-03 15:04:30,512 - INFO - 127.0.0.1 - - [03/Mar/2025 15:04:30] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-03 15:04:33,811 - INFO - 127.0.0.1 - - [03/Mar/2025 15:04:33] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-03 15:04:36,496 - INFO - 127.0.0.1 - - [03/Mar/2025 15:04:36] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-03 15:04:39,843 - INFO - 127.0.0.1 - - [03/Mar/2025 15:04:39] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-03 15:04:42,500 - INFO - 127.0.0.1 - - [03/Mar/2025 15:04:42] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-03 15:04:45,814 - INFO - 127.0.0.1 - - [03/Mar/2025 15:04:45] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-03 15:04:46,603 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 15:04:46,720 - INFO -  * Restarting with stat
+2025-03-03 15:04:47,596 - WARNING -  * Debugger is active!
+2025-03-03 15:04:47,604 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 15:04:48,819 - INFO - 127.0.0.1 - - [03/Mar/2025 15:04:48] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-03 15:04:51,505 - INFO - 127.0.0.1 - - [03/Mar/2025 15:04:51] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-03 15:04:53,584 - INFO - 127.0.0.1 - - [03/Mar/2025 15:04:53] "GET /devices/ HTTP/1.1" 200 -
+2025-03-03 15:04:53,907 - INFO - 127.0.0.1 - - [03/Mar/2025 15:04:53] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 15:13:46,819 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 15:13:46,910 - INFO -  * Restarting with stat
+2025-03-03 15:13:48,163 - WARNING -  * Debugger is active!
+2025-03-03 15:13:48,173 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 15:16:07,154 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 15:16:07,217 - INFO -  * Restarting with stat
+2025-03-03 15:16:08,201 - WARNING -  * Debugger is active!
+2025-03-03 15:16:08,209 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 15:16:13,654 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 15:16:13,719 - INFO -  * Restarting with stat
+2025-03-03 15:16:28,832 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-03 15:16:28,832 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-03 15:16:28,835 - INFO -  * Restarting with stat
+2025-03-03 15:16:29,660 - WARNING -  * Debugger is active!
+2025-03-03 15:16:29,667 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 15:17:43,799 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 15:17:43,924 - INFO -  * Restarting with stat
+2025-03-03 15:17:50,047 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-03 15:17:50,047 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-03 15:17:50,050 - INFO -  * Restarting with stat
+2025-03-03 15:17:50,889 - WARNING -  * Debugger is active!
+2025-03-03 15:17:50,896 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 15:18:12,064 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 15:18:12,137 - INFO -  * Restarting with stat
+2025-03-03 15:18:13,162 - WARNING -  * Debugger is active!
+2025-03-03 15:18:13,170 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 15:21:28,916 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 15:21:28,976 - INFO -  * Restarting with stat
+2025-03-03 15:21:29,946 - WARNING -  * Debugger is active!
+2025-03-03 15:21:29,954 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 15:24:10,994 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 15:24:11,068 - INFO -  * Restarting with stat
+2025-03-03 15:24:12,356 - WARNING -  * Debugger is active!
+2025-03-03 15:24:12,364 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 15:27:39,456 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 15:27:39,519 - INFO -  * Restarting with stat
+2025-03-03 15:27:58,993 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-03 15:27:58,994 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-03 15:27:58,998 - INFO -  * Restarting with stat
+2025-03-03 15:28:00,196 - WARNING -  * Debugger is active!
+2025-03-03 15:28:00,209 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 15:28:34,158 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 15:28:34,226 - INFO -  * Restarting with stat
+2025-03-03 15:28:35,071 - WARNING -  * Debugger is active!
+2025-03-03 15:28:35,077 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 15:30:16,715 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 15:30:16,789 - INFO -  * Restarting with stat
+2025-03-03 15:30:17,746 - WARNING -  * Debugger is active!
+2025-03-03 15:30:17,754 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 15:30:37,084 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 15:30:37,161 - INFO -  * Restarting with stat
+2025-03-03 15:30:38,019 - WARNING -  * Debugger is active!
+2025-03-03 15:30:38,026 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 15:30:45,592 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 15:30:45,662 - INFO -  * Restarting with stat
+2025-03-03 15:30:46,552 - WARNING -  * Debugger is active!
+2025-03-03 15:30:46,562 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 15:30:59,358 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 15:30:59,418 - INFO -  * Restarting with stat
+2025-03-03 15:31:00,432 - WARNING -  * Debugger is active!
+2025-03-03 15:31:00,442 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 15:32:23,133 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 15:32:23,195 - INFO -  * Restarting with stat
+2025-03-03 15:32:24,299 - WARNING -  * Debugger is active!
+2025-03-03 15:32:24,309 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 15:32:36,142 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 15:32:36,201 - INFO -  * Restarting with stat
+2025-03-03 15:32:37,179 - WARNING -  * Debugger is active!
+2025-03-03 15:32:37,190 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 15:33:33,571 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 15:33:33,629 - INFO -  * Restarting with stat
+2025-03-03 15:33:34,543 - WARNING -  * Debugger is active!
+2025-03-03 15:33:34,551 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 15:35:28,991 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 15:35:29,053 - INFO -  * Restarting with stat
+2025-03-03 15:35:30,061 - WARNING -  * Debugger is active!
+2025-03-03 15:35:30,070 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 15:35:36,611 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 15:35:36,678 - INFO -  * Restarting with stat
+2025-03-03 15:35:37,583 - WARNING -  * Debugger is active!
+2025-03-03 15:35:37,599 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 15:35:38,888 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 15:35:38,947 - INFO -  * Restarting with stat
+2025-03-03 15:35:39,789 - WARNING -  * Debugger is active!
+2025-03-03 15:35:39,795 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 15:39:39,469 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 15:39:39,532 - INFO -  * Restarting with stat
+2025-03-03 15:40:08,355 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-03 15:40:08,355 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-03 15:40:08,357 - INFO -  * Restarting with stat
+2025-03-03 15:40:09,232 - WARNING -  * Debugger is active!
+2025-03-03 15:40:09,244 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 15:40:44,314 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 15:40:44,376 - INFO -  * Restarting with stat
+2025-03-03 15:40:45,170 - WARNING -  * Debugger is active!
+2025-03-03 15:40:45,177 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 16:10:34,660 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 16:10:34,728 - INFO -  * Restarting with stat
+2025-03-03 16:10:35,679 - WARNING -  * Debugger is active!
+2025-03-03 16:10:35,688 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 16:10:41,184 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 16:10:41,269 - INFO -  * Restarting with stat
+2025-03-03 16:10:42,172 - WARNING -  * Debugger is active!
+2025-03-03 16:10:42,178 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 16:11:00,418 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 16:11:00,485 - INFO -  * Restarting with stat
+2025-03-03 16:11:01,475 - WARNING -  * Debugger is active!
+2025-03-03 16:11:01,481 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 16:11:08,028 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 16:11:08,095 - INFO -  * Restarting with stat
+2025-03-03 16:11:08,932 - WARNING -  * Debugger is active!
+2025-03-03 16:11:08,938 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 17:49:05,911 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 17:49:05,975 - INFO -  * Restarting with stat
+2025-03-03 17:49:07,053 - WARNING -  * Debugger is active!
+2025-03-03 17:49:07,060 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 17:52:03,135 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 17:52:03,217 - INFO -  * Restarting with stat
+2025-03-03 17:52:04,170 - WARNING -  * Debugger is active!
+2025-03-03 17:52:04,179 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 17:52:28,751 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 17:52:28,820 - INFO -  * Restarting with stat
+2025-03-03 17:52:29,841 - WARNING -  * Debugger is active!
+2025-03-03 17:52:29,849 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 18:05:26,824 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 18:05:26,913 - INFO -  * Restarting with stat
+2025-03-03 18:05:28,029 - WARNING -  * Debugger is active!
+2025-03-03 18:05:28,040 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 18:09:51,277 - INFO - 127.0.0.1 - - [03/Mar/2025 18:09:51] "GET /system/edit_canteen_timings HTTP/1.1" 200 -
+2025-03-03 18:09:51,674 - INFO - 127.0.0.1 - - [03/Mar/2025 18:09:51] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 18:09:53,861 - INFO - 127.0.0.1 - - [03/Mar/2025 18:09:53] "GET /system/assign_canteen_to_shift HTTP/1.1" 200 -
+2025-03-03 18:09:54,160 - INFO - 127.0.0.1 - - [03/Mar/2025 18:09:54] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 18:26:21,260 - INFO - 127.0.0.1 - - [03/Mar/2025 18:26:21] "[32mPOST /system/assign_canteen_to_shift HTTP/1.1[0m" 302 -
+2025-03-03 18:26:21,279 - INFO - 127.0.0.1 - - [03/Mar/2025 18:26:21] "GET /system/assign_canteen_to_shift HTTP/1.1" 200 -
+2025-03-03 18:26:21,499 - INFO - 127.0.0.1 - - [03/Mar/2025 18:26:21] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 18:26:25,839 - INFO - 127.0.0.1 - - [03/Mar/2025 18:26:25] "GET /system/assign_canteen_to_shift HTTP/1.1" 200 -
+2025-03-03 18:26:25,918 - INFO - 127.0.0.1 - - [03/Mar/2025 18:26:25] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 18:27:02,089 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 18:27:02,155 - INFO -  * Restarting with stat
+2025-03-03 18:27:03,045 - WARNING -  * Debugger is active!
+2025-03-03 18:27:03,052 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 18:28:09,566 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 18:28:09,632 - INFO -  * Restarting with stat
+2025-03-03 18:29:19,741 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-03 18:29:19,742 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-03 18:29:19,745 - INFO -  * Restarting with stat
+2025-03-03 18:29:20,657 - WARNING -  * Debugger is active!
+2025-03-03 18:29:20,667 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 18:29:30,374 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 18:29:30,435 - INFO -  * Restarting with stat
+2025-03-03 18:29:31,287 - WARNING -  * Debugger is active!
+2025-03-03 18:29:31,294 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 18:31:10,882 - INFO - 127.0.0.1 - - [03/Mar/2025 18:31:10] "GET /system/assign_canteen_to_shift HTTP/1.1" 200 -
+2025-03-03 18:31:12,735 - INFO - 127.0.0.1 - - [03/Mar/2025 18:31:12] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 18:32:35,166 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 18:32:35,236 - INFO -  * Restarting with stat
+2025-03-03 18:32:36,131 - WARNING -  * Debugger is active!
+2025-03-03 18:32:36,139 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 18:32:37,417 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 18:32:37,481 - INFO -  * Restarting with stat
+2025-03-03 18:32:38,305 - WARNING -  * Debugger is active!
+2025-03-03 18:32:38,312 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 18:33:15,557 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 18:33:15,614 - INFO -  * Restarting with stat
+2025-03-03 18:33:16,457 - WARNING -  * Debugger is active!
+2025-03-03 18:33:16,464 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 18:42:41,545 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-03 18:42:41,612 - INFO -  * Restarting with stat
+2025-03-03 18:42:42,900 - WARNING -  * Debugger is active!
+2025-03-03 18:42:42,909 - INFO -  * Debugger PIN: 141-694-372
+2025-03-03 18:43:00,045 - INFO - 127.0.0.1 - - [03/Mar/2025 18:43:00] "GET /system/assign_canteen_to_shift HTTP/1.1" 200 -
+2025-03-03 18:43:00,435 - INFO - 127.0.0.1 - - [03/Mar/2025 18:43:00] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 18:43:02,783 - INFO - 127.0.0.1 - - [03/Mar/2025 18:43:02] "GET /system/edit_canteen_timings HTTP/1.1" 200 -
+2025-03-03 18:43:03,073 - INFO - 127.0.0.1 - - [03/Mar/2025 18:43:03] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 22:58:04,995 - INFO - 127.0.0.1 - - [03/Mar/2025 22:58:04] "GET /configuration/ HTTP/1.1" 200 -
+2025-03-03 22:58:05,189 - INFO - 127.0.0.1 - - [03/Mar/2025 22:58:05] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 22:58:07,258 - INFO - 127.0.0.1 - - [03/Mar/2025 22:58:07] "GET /reports/ HTTP/1.1" 200 -
+2025-03-03 22:58:07,471 - INFO - 127.0.0.1 - - [03/Mar/2025 22:58:07] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 22:58:09,258 - INFO - 127.0.0.1 - - [03/Mar/2025 22:58:09] "GET /configuration/ HTTP/1.1" 200 -
+2025-03-03 22:58:09,450 - INFO - 127.0.0.1 - - [03/Mar/2025 22:58:09] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 23:13:53,899 - INFO - 127.0.0.1 - - [03/Mar/2025 23:13:53] "[32mPOST /system/assign_canteen_to_shift HTTP/1.1[0m" 302 -
+2025-03-03 23:13:53,921 - INFO - 127.0.0.1 - - [03/Mar/2025 23:13:53] "GET /system/assign_canteen_to_shift HTTP/1.1" 200 -
+2025-03-03 23:13:54,130 - INFO - 127.0.0.1 - - [03/Mar/2025 23:13:54] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 23:13:58,112 - INFO - 127.0.0.1 - - [03/Mar/2025 23:13:58] "GET /system/live HTTP/1.1" 200 -
+2025-03-03 23:13:58,247 - INFO - 127.0.0.1 - - [03/Mar/2025 23:13:58] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 23:13:58,598 - INFO - 127.0.0.1 - - [03/Mar/2025 23:13:58] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-03 23:13:59,842 - INFO - 127.0.0.1 - - [03/Mar/2025 23:13:59] "GET /dashboard/ HTTP/1.1" 200 -
+2025-03-03 23:13:59,995 - INFO - 127.0.0.1 - - [03/Mar/2025 23:13:59] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 23:14:00,349 - INFO - 127.0.0.1 - - [03/Mar/2025 23:14:00] "GET /dashboard/monitored-tables HTTP/1.1" 200 -
+2025-03-03 23:14:03,811 - INFO - 127.0.0.1 - - [03/Mar/2025 23:14:03] "GET /system/live HTTP/1.1" 200 -
+2025-03-03 23:14:03,942 - INFO - 127.0.0.1 - - [03/Mar/2025 23:14:03] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 23:14:04,073 - INFO - 127.0.0.1 - - [03/Mar/2025 23:14:04] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-03 23:14:05,428 - INFO - 127.0.0.1 - - [03/Mar/2025 23:14:05] "GET /reports/ HTTP/1.1" 200 -
+2025-03-03 23:14:05,589 - INFO - 127.0.0.1 - - [03/Mar/2025 23:14:05] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 23:14:06,944 - INFO - 127.0.0.1 - - [03/Mar/2025 23:14:06] "GET /configuration/ HTTP/1.1" 200 -
+2025-03-03 23:14:07,243 - INFO - 127.0.0.1 - - [03/Mar/2025 23:14:07] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-03 23:14:09,511 - INFO - 127.0.0.1 - - [03/Mar/2025 23:14:09] "GET /reports/ HTTP/1.1" 200 -
+2025-03-03 23:14:09,636 - INFO - 127.0.0.1 - - [03/Mar/2025 23:14:09] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-04 04:40:05,920 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 04:40:06,029 - INFO -  * Restarting with stat
+2025-03-04 04:40:07,365 - WARNING -  * Debugger is active!
+2025-03-04 04:40:07,371 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:01:48,664 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:01:48,736 - INFO -  * Restarting with stat
+2025-03-04 05:01:49,814 - WARNING -  * Debugger is active!
+2025-03-04 05:01:49,824 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:02:25,916 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:02:25,979 - INFO -  * Restarting with stat
+2025-03-04 05:02:26,945 - WARNING -  * Debugger is active!
+2025-03-04 05:02:26,952 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:02:51,433 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:02:51,501 - INFO -  * Restarting with stat
+2025-03-04 05:02:52,305 - WARNING -  * Debugger is active!
+2025-03-04 05:02:52,313 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:03:45,414 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:03:45,477 - INFO -  * Restarting with stat
+2025-03-04 05:03:46,294 - WARNING -  * Debugger is active!
+2025-03-04 05:03:46,301 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:03:49,636 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:03:49,713 - INFO -  * Restarting with stat
+2025-03-04 05:03:50,542 - WARNING -  * Debugger is active!
+2025-03-04 05:03:50,550 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:06:02,527 - INFO - 127.0.0.1 - - [04/Mar/2025 05:06:02] "GET /system/edit_canteen_timings HTTP/1.1" 200 -
+2025-03-04 05:06:02,941 - INFO - 127.0.0.1 - - [04/Mar/2025 05:06:02] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-04 05:06:20,307 - INFO - 127.0.0.1 - - [04/Mar/2025 05:06:20] "POST /system/edit_canteen_timings HTTP/1.1" 200 -
+2025-03-04 05:06:20,587 - INFO - 127.0.0.1 - - [04/Mar/2025 05:06:20] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-04 05:06:27,203 - INFO - 127.0.0.1 - - [04/Mar/2025 05:06:27] "GET /system/assign_canteen_to_shift HTTP/1.1" 200 -
+2025-03-04 05:06:27,495 - INFO - 127.0.0.1 - - [04/Mar/2025 05:06:27] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-04 05:06:32,305 - INFO - 127.0.0.1 - - [04/Mar/2025 05:06:32] "GET /system/edit_shifts HTTP/1.1" 200 -
+2025-03-04 05:06:32,598 - INFO - 127.0.0.1 - - [04/Mar/2025 05:06:32] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-04 05:06:40,785 - INFO - 127.0.0.1 - - [04/Mar/2025 05:06:40] "[32mPOST /system/edit_shifts HTTP/1.1[0m" 302 -
+2025-03-04 05:06:40,802 - INFO - 127.0.0.1 - - [04/Mar/2025 05:06:40] "GET /system/edit_shifts HTTP/1.1" 200 -
+2025-03-04 05:06:41,040 - INFO - 127.0.0.1 - - [04/Mar/2025 05:06:41] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-04 05:06:46,121 - INFO - 127.0.0.1 - - [04/Mar/2025 05:06:46] "GET /configuration/ HTTP/1.1" 200 -
+2025-03-04 05:06:46,408 - INFO - 127.0.0.1 - - [04/Mar/2025 05:06:46] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-04 05:06:47,595 - INFO - 127.0.0.1 - - [04/Mar/2025 05:06:47] "GET /reports/ HTTP/1.1" 200 -
+2025-03-04 05:06:47,821 - INFO - 127.0.0.1 - - [04/Mar/2025 05:06:47] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-04 05:06:49,267 - INFO - 127.0.0.1 - - [04/Mar/2025 05:06:49] "GET /system/live HTTP/1.1" 200 -
+2025-03-04 05:06:49,575 - INFO - 127.0.0.1 - - [04/Mar/2025 05:06:49] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 05:06:49,827 - INFO - 127.0.0.1 - - [04/Mar/2025 05:06:49] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-04 05:06:51,450 - INFO - 127.0.0.1 - - [04/Mar/2025 05:06:51] "GET /dashboard/ HTTP/1.1" 200 -
+2025-03-04 05:06:51,612 - INFO - 127.0.0.1 - - [04/Mar/2025 05:06:51] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-04 05:06:51,770 - INFO - 127.0.0.1 - - [04/Mar/2025 05:06:51] "GET /dashboard/monitored-tables HTTP/1.1" 200 -
+2025-03-04 05:06:52,494 - INFO - 127.0.0.1 - - [04/Mar/2025 05:06:52] "GET /reports/ HTTP/1.1" 200 -
+2025-03-04 05:06:52,655 - INFO - 127.0.0.1 - - [04/Mar/2025 05:06:52] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-04 05:06:53,297 - INFO - 127.0.0.1 - - [04/Mar/2025 05:06:53] "GET /configuration/ HTTP/1.1" 200 -
+2025-03-04 05:06:53,599 - INFO - 127.0.0.1 - - [04/Mar/2025 05:06:53] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-04 05:07:55,036 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:07:55,097 - INFO -  * Restarting with stat
+2025-03-04 05:07:55,972 - WARNING -  * Debugger is active!
+2025-03-04 05:07:55,982 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:08:57,483 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:08:57,551 - INFO -  * Restarting with stat
+2025-03-04 05:08:58,546 - WARNING -  * Debugger is active!
+2025-03-04 05:08:58,553 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:11:24,729 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:11:24,786 - INFO -  * Restarting with stat
+2025-03-04 05:11:25,708 - WARNING -  * Debugger is active!
+2025-03-04 05:11:25,719 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:14:39,457 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:14:39,527 - INFO -  * Restarting with stat
+2025-03-04 05:14:40,568 - WARNING -  * Debugger is active!
+2025-03-04 05:14:40,580 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:15:04,173 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:15:04,245 - INFO -  * Restarting with stat
+2025-03-04 05:15:05,171 - WARNING -  * Debugger is active!
+2025-03-04 05:15:05,179 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:15:39,675 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:15:39,774 - INFO -  * Restarting with stat
+2025-03-04 05:15:40,873 - WARNING -  * Debugger is active!
+2025-03-04 05:15:40,881 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:16:24,709 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:16:24,781 - INFO -  * Restarting with stat
+2025-03-04 05:16:25,664 - WARNING -  * Debugger is active!
+2025-03-04 05:16:25,674 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:19:26,422 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:19:26,533 - INFO -  * Restarting with stat
+2025-03-04 05:19:27,649 - WARNING -  * Debugger is active!
+2025-03-04 05:19:27,656 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:19:53,204 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:19:53,259 - INFO -  * Restarting with stat
+2025-03-04 05:19:54,068 - WARNING -  * Debugger is active!
+2025-03-04 05:19:54,075 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:20:23,937 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:20:24,031 - INFO -  * Restarting with stat
+2025-03-04 05:20:25,477 - WARNING -  * Debugger is active!
+2025-03-04 05:20:25,491 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:20:57,519 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:20:57,593 - INFO -  * Restarting with stat
+2025-03-04 05:20:58,442 - WARNING -  * Debugger is active!
+2025-03-04 05:20:58,448 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:21:32,562 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:21:32,627 - INFO -  * Restarting with stat
+2025-03-04 05:21:39,819 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-04 05:21:39,819 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-04 05:21:39,824 - INFO -  * Restarting with stat
+2025-03-04 05:21:40,803 - WARNING -  * Debugger is active!
+2025-03-04 05:21:40,811 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:21:54,743 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:21:54,804 - INFO -  * Restarting with stat
+2025-03-04 05:21:55,661 - WARNING -  * Debugger is active!
+2025-03-04 05:21:55,667 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:22:00,160 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:22:00,240 - INFO -  * Restarting with stat
+2025-03-04 05:22:01,068 - WARNING -  * Debugger is active!
+2025-03-04 05:22:01,074 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:22:49,113 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:22:49,191 - INFO -  * Restarting with stat
+2025-03-04 05:22:50,179 - WARNING -  * Debugger is active!
+2025-03-04 05:22:50,185 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:23:15,927 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:23:16,002 - INFO -  * Restarting with stat
+2025-03-04 05:23:17,165 - WARNING -  * Debugger is active!
+2025-03-04 05:23:17,173 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:23:21,623 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:23:21,687 - INFO -  * Restarting with stat
+2025-03-04 05:23:22,606 - WARNING -  * Debugger is active!
+2025-03-04 05:23:22,613 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:23:34,547 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:23:34,616 - INFO -  * Restarting with stat
+2025-03-04 05:23:35,558 - WARNING -  * Debugger is active!
+2025-03-04 05:23:35,567 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:23:43,386 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:23:43,455 - INFO -  * Restarting with stat
+2025-03-04 05:23:44,333 - WARNING -  * Debugger is active!
+2025-03-04 05:23:44,341 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:24:01,547 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:24:01,615 - INFO -  * Restarting with stat
+2025-03-04 05:24:02,549 - WARNING -  * Debugger is active!
+2025-03-04 05:24:02,556 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:24:43,068 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:24:43,125 - INFO -  * Restarting with stat
+2025-03-04 05:24:44,096 - WARNING -  * Debugger is active!
+2025-03-04 05:24:44,107 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:25:56,265 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:25:56,349 - INFO -  * Restarting with stat
+2025-03-04 05:25:57,332 - WARNING -  * Debugger is active!
+2025-03-04 05:25:57,340 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:26:59,850 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:26:59,913 - INFO -  * Restarting with stat
+2025-03-04 05:27:00,840 - WARNING -  * Debugger is active!
+2025-03-04 05:27:00,851 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:28:00,838 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:28:00,907 - INFO -  * Restarting with stat
+2025-03-04 05:28:01,927 - WARNING -  * Debugger is active!
+2025-03-04 05:28:01,936 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:28:19,169 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:28:19,247 - INFO -  * Restarting with stat
+2025-03-04 05:28:20,169 - WARNING -  * Debugger is active!
+2025-03-04 05:28:20,179 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:30:18,233 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:30:18,295 - INFO -  * Restarting with stat
+2025-03-04 05:30:19,177 - WARNING -  * Debugger is active!
+2025-03-04 05:30:19,183 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:30:58,637 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:30:58,735 - INFO -  * Restarting with stat
+2025-03-04 05:31:00,025 - WARNING -  * Debugger is active!
+2025-03-04 05:31:00,038 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:31:11,890 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:31:11,958 - INFO -  * Restarting with stat
+2025-03-04 05:31:12,896 - WARNING -  * Debugger is active!
+2025-03-04 05:31:12,903 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 05:31:48,008 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 05:31:48,076 - INFO -  * Restarting with stat
+2025-03-04 05:31:49,181 - WARNING -  * Debugger is active!
+2025-03-04 05:31:49,189 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 06:27:38,293 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 06:27:38,357 - INFO -  * Restarting with stat
+2025-03-04 06:27:39,283 - WARNING -  * Debugger is active!
+2025-03-04 06:27:39,290 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 06:28:11,243 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 06:28:11,309 - INFO -  * Restarting with stat
+2025-03-04 06:28:12,125 - WARNING -  * Debugger is active!
+2025-03-04 06:28:12,132 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 06:28:31,488 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 06:28:31,561 - INFO -  * Restarting with stat
+2025-03-04 06:28:32,919 - WARNING -  * Debugger is active!
+2025-03-04 06:28:32,931 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 06:28:35,278 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 06:28:35,342 - INFO -  * Restarting with stat
+2025-03-04 06:28:36,107 - WARNING -  * Debugger is active!
+2025-03-04 06:28:36,113 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 06:28:40,503 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 06:28:40,560 - INFO -  * Restarting with stat
+2025-03-04 06:28:41,336 - WARNING -  * Debugger is active!
+2025-03-04 06:28:41,344 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 06:29:12,169 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 06:29:12,229 - INFO -  * Restarting with stat
+2025-03-04 06:29:13,064 - WARNING -  * Debugger is active!
+2025-03-04 06:29:13,070 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 06:29:24,971 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 06:29:25,052 - INFO -  * Restarting with stat
+2025-03-04 06:29:25,939 - WARNING -  * Debugger is active!
+2025-03-04 06:29:25,947 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 06:30:01,063 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 06:30:01,118 - INFO -  * Restarting with stat
+2025-03-04 06:30:01,981 - WARNING -  * Debugger is active!
+2025-03-04 06:30:01,988 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 06:30:54,062 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 06:30:54,129 - INFO -  * Restarting with stat
+2025-03-04 06:30:54,972 - WARNING -  * Debugger is active!
+2025-03-04 06:30:54,979 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 06:31:05,808 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 06:31:05,867 - INFO -  * Restarting with stat
+2025-03-04 06:31:06,662 - WARNING -  * Debugger is active!
+2025-03-04 06:31:06,669 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 06:31:18,546 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 06:31:18,624 - INFO -  * Restarting with stat
+2025-03-04 06:31:19,685 - WARNING -  * Debugger is active!
+2025-03-04 06:31:19,696 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 06:31:54,964 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 06:31:55,088 - INFO -  * Restarting with stat
+2025-03-04 06:31:56,166 - WARNING -  * Debugger is active!
+2025-03-04 06:31:56,173 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 06:36:30,313 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 06:36:30,422 - INFO -  * Restarting with stat
+2025-03-04 06:36:31,267 - WARNING -  * Debugger is active!
+2025-03-04 06:36:31,274 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 06:37:01,108 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 06:37:01,175 - INFO -  * Restarting with stat
+2025-03-04 06:37:01,956 - WARNING -  * Debugger is active!
+2025-03-04 06:37:01,962 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 06:38:30,316 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 06:38:30,376 - INFO -  * Restarting with stat
+2025-03-04 06:38:31,305 - WARNING -  * Debugger is active!
+2025-03-04 06:38:31,314 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 06:39:48,429 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 06:39:48,502 - INFO -  * Restarting with stat
+2025-03-04 06:39:49,624 - WARNING -  * Debugger is active!
+2025-03-04 06:39:49,636 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 06:40:01,663 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 06:40:01,734 - INFO -  * Restarting with stat
+2025-03-04 06:40:02,585 - WARNING -  * Debugger is active!
+2025-03-04 06:40:02,594 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 06:49:35,783 - INFO - 127.0.0.1 - - [04/Mar/2025 06:49:35] "GET /system/live HTTP/1.1" 200 -
+2025-03-04 06:49:36,131 - INFO - 127.0.0.1 - - [04/Mar/2025 06:49:36] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-04 06:49:36,637 - INFO - 127.0.0.1 - - [04/Mar/2025 06:49:36] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 06:49:39,926 - INFO - 127.0.0.1 - - [04/Mar/2025 06:49:39] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 06:49:43,109 - INFO - 127.0.0.1 - - [04/Mar/2025 06:49:43] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 06:49:46,413 - INFO - 127.0.0.1 - - [04/Mar/2025 06:49:46] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 06:49:49,106 - INFO - 127.0.0.1 - - [04/Mar/2025 06:49:49] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 06:49:52,410 - INFO - 127.0.0.1 - - [04/Mar/2025 06:49:52] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 06:49:55,099 - INFO - 127.0.0.1 - - [04/Mar/2025 06:49:55] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 06:49:58,408 - INFO - 127.0.0.1 - - [04/Mar/2025 06:49:58] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 06:50:01,111 - INFO - 127.0.0.1 - - [04/Mar/2025 06:50:01] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 06:50:04,416 - INFO - 127.0.0.1 - - [04/Mar/2025 06:50:04] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 06:50:07,109 - INFO - 127.0.0.1 - - [04/Mar/2025 06:50:07] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 06:50:10,415 - INFO - 127.0.0.1 - - [04/Mar/2025 06:50:10] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 06:50:13,099 - INFO - 127.0.0.1 - - [04/Mar/2025 06:50:13] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 06:50:16,423 - INFO - 127.0.0.1 - - [04/Mar/2025 06:50:16] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 06:50:19,105 - INFO - 127.0.0.1 - - [04/Mar/2025 06:50:19] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 06:50:22,408 - INFO - 127.0.0.1 - - [04/Mar/2025 06:50:22] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 06:50:25,108 - INFO - 127.0.0.1 - - [04/Mar/2025 06:50:25] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 06:50:28,405 - INFO - 127.0.0.1 - - [04/Mar/2025 06:50:28] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 06:50:31,113 - INFO - 127.0.0.1 - - [04/Mar/2025 06:50:31] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 06:50:34,413 - INFO - 127.0.0.1 - - [04/Mar/2025 06:50:34] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 06:50:37,110 - INFO - 127.0.0.1 - - [04/Mar/2025 06:50:37] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 06:50:40,411 - INFO - 127.0.0.1 - - [04/Mar/2025 06:50:40] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 06:52:40,420 - INFO - 127.0.0.1 - - [04/Mar/2025 06:52:40] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 06:54:09,802 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 06:54:09,869 - INFO -  * Restarting with stat
+2025-03-04 06:54:50,411 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-04 06:54:50,411 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-04 06:54:50,415 - INFO -  * Restarting with stat
+2025-03-04 06:54:51,218 - WARNING -  * Debugger is active!
+2025-03-04 06:54:51,225 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 06:55:40,426 - INFO - 127.0.0.1 - - [04/Mar/2025 06:55:40] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 06:56:00,849 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 06:56:00,915 - INFO -  * Restarting with stat
+2025-03-04 06:56:02,080 - WARNING -  * Debugger is active!
+2025-03-04 06:56:02,090 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 06:58:40,423 - INFO - 127.0.0.1 - - [04/Mar/2025 06:58:40] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:01:40,420 - INFO - 127.0.0.1 - - [04/Mar/2025 07:01:40] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:04:40,413 - INFO - 127.0.0.1 - - [04/Mar/2025 07:04:40] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:07:40,414 - INFO - 127.0.0.1 - - [04/Mar/2025 07:07:40] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:10:40,413 - INFO - 127.0.0.1 - - [04/Mar/2025 07:10:40] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:13:40,428 - INFO - 127.0.0.1 - - [04/Mar/2025 07:13:40] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:16:40,423 - INFO - 127.0.0.1 - - [04/Mar/2025 07:16:40] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:19:40,417 - INFO - 127.0.0.1 - - [04/Mar/2025 07:19:40] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:22:40,418 - INFO - 127.0.0.1 - - [04/Mar/2025 07:22:40] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:25:40,415 - INFO - 127.0.0.1 - - [04/Mar/2025 07:25:40] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:28:40,413 - INFO - 127.0.0.1 - - [04/Mar/2025 07:28:40] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:31:40,410 - INFO - 127.0.0.1 - - [04/Mar/2025 07:31:40] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:34:40,425 - INFO - 127.0.0.1 - - [04/Mar/2025 07:34:40] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:37:40,410 - INFO - 127.0.0.1 - - [04/Mar/2025 07:37:40] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:40:40,413 - INFO - 127.0.0.1 - - [04/Mar/2025 07:40:40] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:43:40,411 - INFO - 127.0.0.1 - - [04/Mar/2025 07:43:40] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:46:40,417 - INFO - 127.0.0.1 - - [04/Mar/2025 07:46:40] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:47:19,896 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 07:47:19,973 - INFO -  * Restarting with stat
+2025-03-04 07:47:20,955 - WARNING -  * Debugger is active!
+2025-03-04 07:47:20,963 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 07:47:44,525 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 07:47:44,591 - INFO -  * Restarting with stat
+2025-03-04 07:47:45,905 - WARNING -  * Debugger is active!
+2025-03-04 07:47:45,912 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 07:48:29,603 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 07:48:29,660 - INFO -  * Restarting with stat
+2025-03-04 07:48:30,513 - WARNING -  * Debugger is active!
+2025-03-04 07:48:30,522 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 07:49:40,409 - INFO - 127.0.0.1 - - [04/Mar/2025 07:49:40] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:51:40,889 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 07:51:40,952 - INFO -  * Restarting with stat
+2025-03-04 07:51:41,833 - WARNING -  * Debugger is active!
+2025-03-04 07:51:41,842 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 07:52:40,417 - INFO - 127.0.0.1 - - [04/Mar/2025 07:52:40] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:55:40,425 - INFO - 127.0.0.1 - - [04/Mar/2025 07:55:40] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:55:42,574 - INFO - 127.0.0.1 - - [04/Mar/2025 07:55:42] "GET /system/live HTTP/1.1" 200 -
+2025-03-04 07:55:42,959 - INFO - 127.0.0.1 - - [04/Mar/2025 07:55:42] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-04 07:55:43,668 - INFO - 127.0.0.1 - - [04/Mar/2025 07:55:43] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:55:46,375 - INFO - 127.0.0.1 - - [04/Mar/2025 07:55:46] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:55:49,677 - INFO - 127.0.0.1 - - [04/Mar/2025 07:55:49] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:55:52,370 - INFO - 127.0.0.1 - - [04/Mar/2025 07:55:52] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:55:56,402 - INFO - 127.0.0.1 - - [04/Mar/2025 07:55:56] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:55:59,103 - INFO - 127.0.0.1 - - [04/Mar/2025 07:55:59] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:56:02,407 - INFO - 127.0.0.1 - - [04/Mar/2025 07:56:02] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:56:05,106 - INFO - 127.0.0.1 - - [04/Mar/2025 07:56:05] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:56:08,409 - INFO - 127.0.0.1 - - [04/Mar/2025 07:56:08] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:56:11,100 - INFO - 127.0.0.1 - - [04/Mar/2025 07:56:11] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:56:14,416 - INFO - 127.0.0.1 - - [04/Mar/2025 07:56:14] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:56:17,102 - INFO - 127.0.0.1 - - [04/Mar/2025 07:56:17] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:56:20,408 - INFO - 127.0.0.1 - - [04/Mar/2025 07:56:20] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:56:23,210 - INFO - 127.0.0.1 - - [04/Mar/2025 07:56:23] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:56:26,420 - INFO - 127.0.0.1 - - [04/Mar/2025 07:56:26] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:56:29,098 - INFO - 127.0.0.1 - - [04/Mar/2025 07:56:29] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:56:32,418 - INFO - 127.0.0.1 - - [04/Mar/2025 07:56:32] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:56:35,109 - INFO - 127.0.0.1 - - [04/Mar/2025 07:56:35] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:56:38,409 - INFO - 127.0.0.1 - - [04/Mar/2025 07:56:38] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:56:41,106 - INFO - 127.0.0.1 - - [04/Mar/2025 07:56:41] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:56:44,411 - INFO - 127.0.0.1 - - [04/Mar/2025 07:56:44] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:56:47,105 - INFO - 127.0.0.1 - - [04/Mar/2025 07:56:47] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:56:50,420 - INFO - 127.0.0.1 - - [04/Mar/2025 07:56:50] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:56:53,105 - INFO - 127.0.0.1 - - [04/Mar/2025 07:56:53] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 07:58:11,618 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 07:58:11,676 - INFO -  * Restarting with stat
+2025-03-04 07:58:12,673 - WARNING -  * Debugger is active!
+2025-03-04 07:58:12,680 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 07:58:40,420 - INFO - 127.0.0.1 - - [04/Mar/2025 07:58:40] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 08:00:58,533 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:00:58,599 - INFO -  * Restarting with stat
+2025-03-04 08:00:59,488 - WARNING -  * Debugger is active!
+2025-03-04 08:00:59,495 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:01:40,421 - INFO - 127.0.0.1 - - [04/Mar/2025 08:01:40] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 08:02:22,391 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:02:22,451 - INFO -  * Restarting with stat
+2025-03-04 08:08:38,943 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-04 08:08:38,943 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-04 08:08:38,945 - INFO -  * Restarting with stat
+2025-03-04 08:08:39,783 - WARNING -  * Debugger is active!
+2025-03-04 08:08:39,790 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:08:53,685 - INFO - 127.0.0.1 - - [04/Mar/2025 08:08:53] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 08:08:56,386 - INFO - 127.0.0.1 - - [04/Mar/2025 08:08:56] "GET /dashboard/ HTTP/1.1" 200 -
+2025-03-04 08:08:56,617 - INFO - 127.0.0.1 - - [04/Mar/2025 08:08:56] "GET /system/live/data HTTP/1.1" 200 -
+2025-03-04 08:08:56,982 - INFO - 127.0.0.1 - - [04/Mar/2025 08:08:56] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-04 08:08:57,362 - INFO - 127.0.0.1 - - [04/Mar/2025 08:08:57] "GET /dashboard/monitored-tables HTTP/1.1" 200 -
+2025-03-04 08:11:16,518 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:11:16,586 - INFO -  * Restarting with stat
+2025-03-04 08:11:17,672 - WARNING -  * Debugger is active!
+2025-03-04 08:11:17,681 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:11:39,517 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:11:39,619 - INFO -  * Restarting with stat
+2025-03-04 08:14:06,292 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-04 08:14:06,292 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-04 08:14:06,295 - INFO -  * Restarting with stat
+2025-03-04 08:14:07,195 - WARNING -  * Debugger is active!
+2025-03-04 08:14:07,203 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:15:36,931 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:15:36,995 - INFO -  * Restarting with stat
+2025-03-04 08:15:37,919 - WARNING -  * Debugger is active!
+2025-03-04 08:15:37,927 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:15:44,550 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:15:44,628 - INFO -  * Restarting with stat
+2025-03-04 08:16:24,182 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-04 08:16:24,182 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-04 08:16:24,185 - INFO -  * Restarting with stat
+2025-03-04 08:16:25,090 - WARNING -  * Debugger is active!
+2025-03-04 08:16:25,099 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:17:01,435 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:17:01,496 - INFO -  * Restarting with stat
+2025-03-04 08:17:02,353 - WARNING -  * Debugger is active!
+2025-03-04 08:17:02,361 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:18:35,364 - INFO - 127.0.0.1 - - [04/Mar/2025 08:18:35] "GET /system/edit_canteen_timings HTTP/1.1" 200 -
+2025-03-04 08:18:35,788 - INFO - 127.0.0.1 - - [04/Mar/2025 08:18:35] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-04 08:18:54,820 - INFO - 127.0.0.1 - - [04/Mar/2025 08:18:54] "GET /system/assign_canteen_to_shift HTTP/1.1" 200 -
+2025-03-04 08:18:55,107 - INFO - 127.0.0.1 - - [04/Mar/2025 08:18:55] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-04 08:18:56,823 - INFO - 127.0.0.1 - - [04/Mar/2025 08:18:56] "GET /system/edit_canteen_timings HTTP/1.1" 200 -
+2025-03-04 08:18:57,118 - INFO - 127.0.0.1 - - [04/Mar/2025 08:18:57] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-04 08:18:59,106 - INFO - 127.0.0.1 - - [04/Mar/2025 08:18:59] "GET /reports/ HTTP/1.1" 200 -
+2025-03-04 08:18:59,235 - INFO - 127.0.0.1 - - [04/Mar/2025 08:18:59] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-04 08:19:05,122 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:19:05,189 - INFO -  * Restarting with stat
+2025-03-04 08:19:06,186 - WARNING -  * Debugger is active!
+2025-03-04 08:19:06,192 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:19:15,935 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:19:15,996 - INFO -  * Restarting with stat
+2025-03-04 08:19:16,819 - WARNING -  * Debugger is active!
+2025-03-04 08:19:16,829 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:19:33,085 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:19:33,160 - INFO -  * Restarting with stat
+2025-03-04 08:19:34,200 - WARNING -  * Debugger is active!
+2025-03-04 08:19:34,214 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:19:39,861 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:19:39,922 - INFO -  * Restarting with stat
+2025-03-04 08:19:40,815 - WARNING -  * Debugger is active!
+2025-03-04 08:19:40,824 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:20:20,409 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:20:20,521 - INFO -  * Restarting with stat
+2025-03-04 08:20:21,491 - WARNING -  * Debugger is active!
+2025-03-04 08:20:21,497 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:23:35,056 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:23:35,132 - INFO -  * Restarting with stat
+2025-03-04 08:23:36,034 - WARNING -  * Debugger is active!
+2025-03-04 08:23:36,044 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:23:51,232 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:23:51,305 - INFO -  * Restarting with stat
+2025-03-04 08:23:52,459 - WARNING -  * Debugger is active!
+2025-03-04 08:23:52,464 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:24:00,153 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:24:00,224 - INFO -  * Restarting with stat
+2025-03-04 08:24:01,108 - WARNING -  * Debugger is active!
+2025-03-04 08:24:01,115 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:24:07,726 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:24:07,782 - INFO -  * Restarting with stat
+2025-03-04 08:24:08,622 - WARNING -  * Debugger is active!
+2025-03-04 08:24:08,632 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:24:09,879 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:24:09,942 - INFO -  * Restarting with stat
+2025-03-04 08:24:10,859 - WARNING -  * Debugger is active!
+2025-03-04 08:24:10,868 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:24:23,909 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:24:23,973 - INFO -  * Restarting with stat
+2025-03-04 08:24:24,889 - WARNING -  * Debugger is active!
+2025-03-04 08:24:24,899 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:26:47,537 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:26:47,614 - INFO -  * Restarting with stat
+2025-03-04 08:26:48,674 - WARNING -  * Debugger is active!
+2025-03-04 08:26:48,682 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:26:55,322 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:26:55,403 - INFO -  * Restarting with stat
+2025-03-04 08:27:06,007 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-04 08:27:06,007 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-04 08:27:06,010 - INFO -  * Restarting with stat
+2025-03-04 08:27:06,881 - WARNING -  * Debugger is active!
+2025-03-04 08:27:06,887 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:29:59,596 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:29:59,655 - INFO -  * Restarting with stat
+2025-03-04 08:30:00,659 - WARNING -  * Debugger is active!
+2025-03-04 08:30:00,666 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:30:29,815 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:30:29,885 - INFO -  * Restarting with stat
+2025-03-04 08:30:30,828 - WARNING -  * Debugger is active!
+2025-03-04 08:30:30,835 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:30:39,524 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:30:39,636 - INFO -  * Restarting with stat
+2025-03-04 08:30:40,492 - WARNING -  * Debugger is active!
+2025-03-04 08:30:40,499 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:30:53,466 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:30:53,527 - INFO -  * Restarting with stat
+2025-03-04 08:30:54,507 - WARNING -  * Debugger is active!
+2025-03-04 08:30:54,514 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:31:26,866 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:31:26,930 - INFO -  * Restarting with stat
+2025-03-04 08:31:27,760 - WARNING -  * Debugger is active!
+2025-03-04 08:31:27,768 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:31:43,961 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:31:44,024 - INFO -  * Restarting with stat
+2025-03-04 08:31:44,963 - WARNING -  * Debugger is active!
+2025-03-04 08:31:44,971 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:31:53,684 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:31:53,765 - INFO -  * Restarting with stat
+2025-03-04 08:31:54,642 - WARNING -  * Debugger is active!
+2025-03-04 08:31:54,650 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:32:03,365 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:32:03,437 - INFO -  * Restarting with stat
+2025-03-04 08:32:04,256 - WARNING -  * Debugger is active!
+2025-03-04 08:32:04,263 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:32:14,096 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:32:14,162 - INFO -  * Restarting with stat
+2025-03-04 08:32:15,109 - WARNING -  * Debugger is active!
+2025-03-04 08:32:15,120 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:35:07,832 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:35:07,892 - INFO -  * Restarting with stat
+2025-03-04 08:35:08,853 - WARNING -  * Debugger is active!
+2025-03-04 08:35:08,863 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:35:28,376 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:35:28,441 - INFO -  * Restarting with stat
+2025-03-04 08:35:29,362 - WARNING -  * Debugger is active!
+2025-03-04 08:35:29,370 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:36:55,181 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:36:55,241 - INFO -  * Restarting with stat
+2025-03-04 08:36:56,377 - WARNING -  * Debugger is active!
+2025-03-04 08:36:56,388 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:38:59,865 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:38:59,919 - INFO -  * Restarting with stat
+2025-03-04 08:39:00,825 - WARNING -  * Debugger is active!
+2025-03-04 08:39:00,833 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:40:40,617 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:40:40,676 - INFO -  * Restarting with stat
+2025-03-04 08:40:41,613 - WARNING -  * Debugger is active!
+2025-03-04 08:40:41,623 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:41:15,850 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:41:15,920 - INFO -  * Restarting with stat
+2025-03-04 08:41:16,761 - WARNING -  * Debugger is active!
+2025-03-04 08:41:16,767 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:41:21,305 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:41:21,369 - INFO -  * Restarting with stat
+2025-03-04 08:41:22,384 - WARNING -  * Debugger is active!
+2025-03-04 08:41:22,396 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:42:52,261 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:42:52,335 - INFO -  * Restarting with stat
+2025-03-04 08:42:53,372 - WARNING -  * Debugger is active!
+2025-03-04 08:42:53,383 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:43:58,650 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:43:58,715 - INFO -  * Restarting with stat
+2025-03-04 08:43:59,595 - WARNING -  * Debugger is active!
+2025-03-04 08:43:59,601 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:44:03,010 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:44:03,067 - INFO -  * Restarting with stat
+2025-03-04 08:44:03,918 - WARNING -  * Debugger is active!
+2025-03-04 08:44:03,925 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:44:11,504 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:44:11,572 - INFO -  * Restarting with stat
+2025-03-04 08:44:12,458 - WARNING -  * Debugger is active!
+2025-03-04 08:44:12,465 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:44:14,765 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:44:14,833 - INFO -  * Restarting with stat
+2025-03-04 08:44:15,722 - WARNING -  * Debugger is active!
+2025-03-04 08:44:15,729 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:56:10,170 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:56:10,229 - INFO -  * Restarting with stat
+2025-03-04 08:56:11,141 - WARNING -  * Debugger is active!
+2025-03-04 08:56:11,149 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:56:26,632 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:56:26,703 - INFO -  * Restarting with stat
+2025-03-04 08:56:27,590 - WARNING -  * Debugger is active!
+2025-03-04 08:56:27,597 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:56:37,420 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:56:37,489 - INFO -  * Restarting with stat
+2025-03-04 08:56:38,315 - WARNING -  * Debugger is active!
+2025-03-04 08:56:38,324 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:56:54,670 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:56:54,757 - INFO -  * Restarting with stat
+2025-03-04 08:56:55,761 - WARNING -  * Debugger is active!
+2025-03-04 08:56:55,770 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:57:03,550 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:57:03,626 - INFO -  * Restarting with stat
+2025-03-04 08:57:04,482 - WARNING -  * Debugger is active!
+2025-03-04 08:57:04,490 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:57:17,487 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:57:17,549 - INFO -  * Restarting with stat
+2025-03-04 08:57:18,391 - WARNING -  * Debugger is active!
+2025-03-04 08:57:18,400 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:57:38,926 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:57:38,986 - INFO -  * Restarting with stat
+2025-03-04 08:57:39,949 - WARNING -  * Debugger is active!
+2025-03-04 08:57:39,956 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:58:44,165 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:58:44,247 - INFO -  * Restarting with stat
+2025-03-04 08:58:45,226 - WARNING -  * Debugger is active!
+2025-03-04 08:58:45,233 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:58:50,748 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:58:50,814 - INFO -  * Restarting with stat
+2025-03-04 08:58:51,730 - WARNING -  * Debugger is active!
+2025-03-04 08:58:51,736 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:59:01,519 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 08:59:01,610 - INFO -  * Restarting with stat
+2025-03-04 08:59:02,838 - WARNING -  * Debugger is active!
+2025-03-04 08:59:02,845 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:59:31,611 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-03-04 08:59:31,611 - INFO - [33mPress CTRL+C to quit[0m
+2025-03-04 08:59:31,615 - INFO -  * Restarting with stat
+2025-03-04 08:59:32,453 - WARNING -  * Debugger is active!
+2025-03-04 08:59:32,459 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 08:59:50,725 - INFO - 127.0.0.1 - - [04/Mar/2025 08:59:50] "GET /system/edit_canteen_timings HTTP/1.1" 200 -
+2025-03-04 08:59:51,130 - INFO - 127.0.0.1 - - [04/Mar/2025 08:59:51] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-04 09:00:07,286 - INFO - 127.0.0.1 - - [04/Mar/2025 09:00:07] "POST /system/edit_canteen_timings HTTP/1.1" 200 -
+2025-03-04 09:00:07,410 - INFO - 127.0.0.1 - - [04/Mar/2025 09:00:07] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-04 09:00:11,644 - INFO - 127.0.0.1 - - [04/Mar/2025 09:00:11] "GET /dashboard/ HTTP/1.1" 200 -
+2025-03-04 09:00:11,892 - INFO - 127.0.0.1 - - [04/Mar/2025 09:00:11] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-04 09:00:12,280 - INFO - 127.0.0.1 - - [04/Mar/2025 09:00:12] "GET /dashboard/monitored-tables HTTP/1.1" 200 -
+2025-03-04 09:00:50,032 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 09:00:50,098 - INFO -  * Restarting with stat
+2025-03-04 09:00:51,013 - WARNING -  * Debugger is active!
+2025-03-04 09:00:51,023 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 09:01:11,510 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 09:01:11,572 - INFO -  * Restarting with stat
+2025-03-04 09:01:12,857 - WARNING -  * Debugger is active!
+2025-03-04 09:01:12,868 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 09:01:43,088 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 09:01:43,155 - INFO -  * Restarting with stat
+2025-03-04 09:01:44,106 - WARNING -  * Debugger is active!
+2025-03-04 09:01:44,113 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 09:02:53,765 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 09:02:53,856 - INFO -  * Restarting with stat
+2025-03-04 09:02:54,946 - WARNING -  * Debugger is active!
+2025-03-04 09:02:54,956 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 10:29:32,530 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 10:29:32,623 - INFO -  * Restarting with stat
+2025-03-04 10:29:33,827 - WARNING -  * Debugger is active!
+2025-03-04 10:29:33,834 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 10:29:40,476 - INFO -  * Detected change in 'C:\\Users\\akhil\\Desktop\\SIGNET\\wix\\blueprints\\monitored_tables.py', reloading
+2025-03-04 10:29:40,561 - INFO -  * Restarting with stat
+2025-03-04 10:29:41,757 - WARNING -  * Debugger is active!
+2025-03-04 10:29:41,766 - INFO -  * Debugger PIN: 141-694-372
+2025-03-04 10:30:56,257 - INFO - 127.0.0.1 - - [04/Mar/2025 10:30:56] "GET /system/edit_canteen_timings HTTP/1.1" 200 -
+2025-03-04 10:30:56,687 - INFO - 127.0.0.1 - - [04/Mar/2025 10:30:56] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -
+2025-03-04 10:31:04,226 - INFO - 127.0.0.1 - - [04/Mar/2025 10:31:04] "POST /system/edit_canteen_timings HTTP/1.1" 200 -
+2025-03-04 10:31:04,304 - INFO - 127.0.0.1 - - [04/Mar/2025 10:31:04] "[36mGET /static/company-logo.png HTTP/1.1[0m" 304 -

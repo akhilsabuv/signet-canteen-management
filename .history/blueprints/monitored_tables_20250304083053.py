@@ -266,12 +266,11 @@ def check_elegibility(event_dt, devuid, usrid):
 ###############################################
 # Define Save to DB Elegibility
 ###############################################
-def savetodb(usrid, event_dt, event_time, latest_entry, shift_start_time, status, description):
-    print("i am here")
+def savetodb(event_dt, event_time, latest_entry, shift_start_time, usrid, status, description):
     if isinstance(latest_entry, tuple):
         latest_entry = latest_entry[0]
     sql = """
-        INSERT INTO sig_transactions  (
+        INSERT INTO sig_event_status (
             usrid,
             event_dt,
             event_time,
@@ -283,19 +282,16 @@ def savetodb(usrid, event_dt, event_time, latest_entry, shift_start_time, status
         VALUES (?, ?, ?, ?, ?, ?, ?)
         """
     params = (usrid, event_dt, event_time, latest_entry, shift_start_time, status, description)
-
-    params= (int(usrid), event_dt, event_time, latest_entry, shift_start_time, status, description)
-
-    print(params)
-    conn = get_logger_db_conn()
-    cursor = conn.cursor()
-    cursor.execute(sql, params)
-    conn.commit()
+    print("asv",usrid)
+    # conn = get_logger_db_conn()
+    # cursor = conn.cursor()
+    # cursor.execute(sql, params)
+    # conn.commit()
 
     # cursor.close()
     # conn.close()
 
-    # print("Row inserted successfully.")
+    print("Row inserted successfully.")
     pass
 
 def checkdb(usrid, event_dt, event_time, latest_entry, shift_start_time, status, description):

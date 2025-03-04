@@ -234,19 +234,16 @@ def check_elegibility(event_dt, devuid, usrid):
             
             print(f"Checking {row.canteen_name}: {start_time} - {end_time}")
             print(f"Current event time: {event_time}")
-
+            
     #         # Dynamic time window check
             if start_time <= event_time <= end_time:
                 trigger = (f"Canteen: {row.canteen_name} "
                          f"({start_time.strftime('%H:%M')} - {end_time.strftime('%H:%M')})")
                 print(f"Match found: {trigger}")
                 latest_entry = get_latest_entry_event_time(usrid)
-                checkdb(usrid, event_dt, event_time, latest_entry, shift_start_time, 0, "description")
-
                 if coupon_elegible(event_dt, event_time, latest_entry, shift_start_time):
-                    pass
-                    # if checkdb(event_dt, event_time, latest_entry, shift_start_time, usrid, status, description):
-                    #     eligible = True
+                    if savetodb(event_dt, event_time, latest_entry, shift_start_time, usrid):
+                        eligible = True
                 break
         
         conn.close()
@@ -266,40 +263,10 @@ def check_elegibility(event_dt, devuid, usrid):
 ###############################################
 # Define Save to DB Elegibility
 ###############################################
-def savetodb(usrid, event_dt, event_time, latest_entry, shift_start_time, status, description):
-    print("i am here")
-    if isinstance(latest_entry, tuple):
-        latest_entry = latest_entry[0]
-    sql = """
-        INSERT INTO sig_transactions  (
-            usrid,
-            event_dt,
-            event_time,
-            latest_entry,
-            shift_start_time,
-            status,
-            description
-        )
-        VALUES (?, ?, ?, ?, ?, ?, ?)
-        """
-    params = (usrid, event_dt, event_time, latest_entry, shift_start_time, status, description)
-
-    params= (int(usrid), event_dt, event_time, latest_entry, shift_start_time, status, description)
-
-    print(params)
-    conn = get_logger_db_conn()
-    cursor = conn.cursor()
-    cursor.execute(sql, params)
-    conn.commit()
-
-    # cursor.close()
-    # conn.close()
-
-    # print("Row inserted successfully.")
+def savetodb(event_dt, event_time, latest_entry, shift_start_time, usrid):
     pass
 
-def checkdb(usrid, event_dt, event_time, latest_entry, shift_start_time, status, description):
-    savetodb(usrid, event_dt, event_time, latest_entry, shift_start_time, status, description)
+def checkdb():
 
 ###############################################
 # Check if elegible for coupon

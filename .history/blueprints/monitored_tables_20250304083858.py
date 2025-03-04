@@ -267,11 +267,19 @@ def check_elegibility(event_dt, devuid, usrid):
 # Define Save to DB Elegibility
 ###############################################
 def savetodb(usrid, event_dt, event_time, latest_entry, shift_start_time, status, description):
-    print("i am here")
-    if isinstance(latest_entry, tuple):
+    # Convert usrid to an integer if needed
+    if isinstance(usrid, str):
+        try:
+            usrid = int(usrid)
+        except ValueError:
+            raise ValueError("usrid must be convertible to an integer")
+    
+    # If latest_entry is a tuple or list, extract its first element
+    if isinstance(latest_entry, (tuple, list)):
         latest_entry = latest_entry[0]
+    
     sql = """
-        INSERT INTO sig_transactions  (
+        INSERT INTO sig_transactions (
             usrid,
             event_dt,
             event_time,
@@ -281,22 +289,24 @@ def savetodb(usrid, event_dt, event_time, latest_entry, shift_start_time, status
             description
         )
         VALUES (?, ?, ?, ?, ?, ?, ?)
-        """
+    """
     params = (usrid, event_dt, event_time, latest_entry, shift_start_time, status, description)
-
-    params= (int(usrid), event_dt, event_time, latest_entry, shift_start_time, status, description)
-
+    
+    # Print the query and the parameters for debugging
+    print("SQL Query:")
+    print(sql)
+    print("Parameters:")
     print(params)
-    conn = get_logger_db_conn()
-    cursor = conn.cursor()
-    cursor.execute(sql, params)
-    conn.commit()
-
+    
+    # Uncomment below to execute the query:
+    # conn = get_logger_db_conn()
+    # cursor = conn.cursor()
+    # cursor.execute(sql, params)
+    # conn.commit()
     # cursor.close()
     # conn.close()
-
-    # print("Row inserted successfully.")
-    pass
+    
+    print("Row inserted successfully.")
 
 def checkdb(usrid, event_dt, event_time, latest_entry, shift_start_time, status, description):
     savetodb(usrid, event_dt, event_time, latest_entry, shift_start_time, status, description)

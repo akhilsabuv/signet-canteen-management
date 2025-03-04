@@ -267,11 +267,25 @@ def check_elegibility(event_dt, devuid, usrid):
 # Define Save to DB Elegibility
 ###############################################
 def savetodb(usrid, event_dt, event_time, latest_entry, shift_start_time, status, description):
-    print("i am here")
-    if isinstance(latest_entry, tuple):
+    # Convert usrid to an integer if it isn't already
+    if isinstance(usrid, str):
+        try:
+            usrid = int(usrid)
+        except ValueError:
+            raise ValueError("usrid must be convertible to an integer")
+    
+    # Debug print: check latest_entry type before extraction
+    print("Before extraction, type(latest_entry):", type(latest_entry), latest_entry)
+    
+    # If latest_entry is a tuple or list, extract the first element
+    if isinstance(latest_entry, (tuple, list)):
         latest_entry = latest_entry[0]
+    
+    # Debug print: check latest_entry after extraction
+    print("After extraction, type(latest_entry):", type(latest_entry), latest_entry)
+    
     sql = """
-        INSERT INTO sig_transactions  (
+        INSERT INTO sig_transactions (
             usrid,
             event_dt,
             event_time,
@@ -282,21 +296,19 @@ def savetodb(usrid, event_dt, event_time, latest_entry, shift_start_time, status
         )
         VALUES (?, ?, ?, ?, ?, ?, ?)
         """
+    
     params = (usrid, event_dt, event_time, latest_entry, shift_start_time, status, description)
-
-    params= (int(usrid), event_dt, event_time, latest_entry, shift_start_time, status, description)
-
-    print(params)
+    print("Final parameters:", params)
+    
     conn = get_logger_db_conn()
     cursor = conn.cursor()
     cursor.execute(sql, params)
     conn.commit()
 
-    # cursor.close()
-    # conn.close()
+    cursor.close()
+    conn.close()
 
-    # print("Row inserted successfully.")
-    pass
+    print("Row inserted successfully.")
 
 def checkdb(usrid, event_dt, event_time, latest_entry, shift_start_time, status, description):
     savetodb(usrid, event_dt, event_time, latest_entry, shift_start_time, status, description)

@@ -266,37 +266,60 @@ def check_elegibility(event_dt, devuid, usrid):
 ###############################################
 # Define Save to DB Elegibility
 ###############################################
-def savetodb(usrid, event_dt, event_time, latest_entry, shift_start_time, status, description):
-    print("i am here")
-    if isinstance(latest_entry, tuple):
-        latest_entry = latest_entry[0]
+
+import datetime
+
+def format_param(param):
+    if isinstance(param, datetime.datetime):
+        # Format datetime as a string; adjust format as needed
+        return "'" + param.strftime("%Y-%m-%d %H:%M:%S") + "'"
+    elif isinstance(param, datetime.time):
+        return "'" + param.strftime("%H:%M:%S") + "'"
+    elif isinstance(param, str):
+        # Wrap strings in quotes; escape single quotes if needed
+        return "'" + param.replace("'", "''") + "'"
+    else:
+        # For numbers and others, use the default string conversion
+        return str(param)
+
+def print_full_query(sql, params):
+    # Create a copy of the SQL string
+    query = sql
+    # For each parameter, replace the first occurrence of ? with the formatted parameter
+    for param in params:
+        formatted = format_param(param)
+        query = query.replace("?", formatted, 1)
+    print(query)
+
+# Example values
+    usrid = 1  # Already an integer
+    event_dt = datetime.datetime(2022, 2, 15, 7, 31, 5, tzinfo=datetime.timezone.utc)
+    event_time = datetime.time(7, 31, 5)
+    # latest_entry is given as a tuple; extract its first element:
+    latest_entry_tuple = (datetime.datetime(2024, 2, 16, 12, 41, 15),)
+    latest_entry = latest_entry_tuple[0]
+    shift_start_time = datetime.time(3, 0)
+    status = 0
+    description = "description"
+
     sql = """
-        INSERT INTO sig_transactions  (
-            usrid,
-            event_dt,
-            event_time,
-            latest_entry,
-            shift_start_time,
-            status,
-            description
-        )
-        VALUES (?, ?, ?, ?, ?, ?, ?)
-        """
+    INSERT INTO sig_transactions (
+        usrid,
+        event_dt,
+        event_time,
+        latest_entry,
+        shift_start_time,
+        status,
+        description
+    )
+    VALUES (?, ?, ?, ?, ?, ?, ?)
+    """
+
     params = (usrid, event_dt, event_time, latest_entry, shift_start_time, status, description)
 
-    params= (int(usrid), event_dt, event_time, latest_entry, shift_start_time, status, description)
-
-    print(params)
-    conn = get_logger_db_conn()
-    cursor = conn.cursor()
-    cursor.execute(sql, params)
-    conn.commit()
-
-    # cursor.close()
-    # conn.close()
-
-    # print("Row inserted successfully.")
-    pass
+    print("Parameters:", params)
+    print("\nFormatted INSERT query:")
+    print_full_query(sql, params)
 
 def checkdb(usrid, event_dt, event_time, latest_entry, shift_start_time, status, description):
     savetodb(usrid, event_dt, event_time, latest_entry, shift_start_time, status, description)

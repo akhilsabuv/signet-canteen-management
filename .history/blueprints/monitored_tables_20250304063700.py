@@ -234,19 +234,17 @@ def check_elegibility(event_dt, devuid, usrid):
             
             print(f"Checking {row.canteen_name}: {start_time} - {end_time}")
             print(f"Current event time: {event_time}")
-
+            
     #         # Dynamic time window check
             if start_time <= event_time <= end_time:
+                # eligible = True
                 trigger = (f"Canteen: {row.canteen_name} "
                          f"({start_time.strftime('%H:%M')} - {end_time.strftime('%H:%M')})")
                 print(f"Match found: {trigger}")
                 latest_entry = get_latest_entry_event_time(usrid)
-                checkdb(usrid, event_dt, event_time, latest_entry, shift_start_time, 0, "description")
+                print("asv",latest_entry)
+                print("asv",shift_start_time)
 
-                if coupon_elegible(event_dt, event_time, latest_entry, shift_start_time):
-                    pass
-                    # if checkdb(event_dt, event_time, latest_entry, shift_start_time, usrid, status, description):
-                    #     eligible = True
                 break
         
         conn.close()
@@ -261,75 +259,6 @@ def check_elegibility(event_dt, devuid, usrid):
         print("No eligible timing found")
     
     return eligible
-
-
-###############################################
-# Define Save to DB Elegibility
-###############################################
-def savetodb(usrid, event_dt, event_time, latest_entry, shift_start_time, status, description):
-    print("i am here")
-    if isinstance(latest_entry, tuple):
-        latest_entry = latest_entry[0]
-    sql = """
-        INSERT INTO sig_transactions  (
-            usrid,
-            event_dt,
-            event_time,
-            latest_entry,
-            shift_start_time,
-            status,
-            description
-        )
-        VALUES (?, ?, ?, ?, ?, ?, ?)
-        """
-    params = (usrid, event_dt, event_time, latest_entry, shift_start_time, status, description)
-
-    params= (int(usrid), event_dt, event_time, latest_entry, shift_start_time, status, description)
-
-    print(params)
-    conn = get_logger_db_conn()
-    cursor = conn.cursor()
-    cursor.execute(sql, params)
-    conn.commit()
-
-    # cursor.close()
-    # conn.close()
-
-    # print("Row inserted successfully.")
-    pass
-
-def checkdb(usrid, event_dt, event_time, latest_entry, shift_start_time, status, description):
-    savetodb(usrid, event_dt, event_time, latest_entry, shift_start_time, status, description)
-
-###############################################
-# Check if elegible for coupon
-###############################################
-
-def coupon_elegible(event_dt, event_time, latest_entry, shift_start_time):
-    # Step 1: Get the event date.
-    event_date = event_dt.date()
-    # Step 2: Determine the appropriate shift start datetime.
-    # If the event time is before the shift start, then the shift likely started on the previous day.
-    if event_dt.time() < shift_start_time:
-        shift_start_dt = datetime.datetime.combine(event_date - datetime.timedelta(days=1), shift_start_time)
-    else:
-        shift_start_dt = datetime.datetime.combine(event_date, shift_start_time)
-
-    print("Shift start datetime:", shift_start_dt)
-
-    # Step 3: Define the ±1 hour window around the shift start.
-    window_start = shift_start_dt - datetime.timedelta(hours=1)
-    window_end = shift_start_dt + datetime.timedelta(hours=1)
-    print("Window start:", window_start, "Window end:", window_end)
-    latest_entry_dt = latest_entry[0]
-
-    # Step 4: Check if the latest entry falls within this window.
-    if window_start <= latest_entry_dt <= window_end:
-        eligible = True
-    else:
-        eligible = False
-
-    print("Eligibility:", eligible)
 
 ###############################################
 # Row Count Change & Overall Eligibility Check
@@ -377,9 +306,37 @@ def row_count_change(table_name, previous_count, new_count):
             if event_devid in canteen_ids:
                 print("Device is registered as a canteen device. Checking canteen eligibility...")
                 if not check_elegibility(event_dt, row.DEVUID, row.USRID):
+                    # print("Canteen timing conditions not met; not eligible.")
                     return False
                 else:
                     print("Canteen timing conditions met.")
+                    # if latest_entry is None:
+                    #     print("No attendance event found; not eligible.")
+                    #     return False
+    #                 shift_start_str = config.get("SHIFT_START_TIME", "01:00")
+    #                 attendance_buffer = config.get("ATTENDANCE_BUFFER_MINUTES", 60)
+    #                 try:
+    #                     shift_start_time = datetime.datetime.strptime(shift_start_str, "%H:%M").time()
+    #                 except Exception as e:
+    #                     print("Error parsing SHIFT_START_TIME:", e)
+    #                     return False
+    #                 allowed_deadline = datetime.datetime.combine(event_local.date(), shift_start_time) + datetime.timedelta(minutes=attendance_buffer)
+    #                 allowed_deadline = tz.localize(allowed_deadline)
+    #                 print(f"Allowed attendance deadline: {allowed_deadline}")
+    #                 print(f"Latest attendance event: {latest_entry}")
+                    
+    #                 if latest_entry <= allowed_deadline:
+    #                     print("Attendance event is within allowed buffer; eligible for canteen service.")
+    #                     return True
+    #                 else:
+    #                     print("Attendance event is too late; not eligible.")
+    #                     return False
+    #         elif event_devid in entry_ids:
+    #             print("Device is registered as an entry device; automatically eligible.")
+    #             return True
+    #         else:
+    #             print("Device not registered as canteen or entry; automatically eligible.")
+    #             return True
         else:
             print(f"No event details found in {table_name}.")
             return False
@@ -517,6 +474,16 @@ def canteenandshiftchecker():
         """)
     except Exception as e:
         return False
+
+
+
+
+
+
+
+
+
+
 
 
 

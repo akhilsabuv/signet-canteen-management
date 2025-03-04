@@ -268,29 +268,34 @@ def check_elegibility(event_dt, devuid, usrid):
 ###############################################
 def savetodb(usrid, event_dt, event_time, latest_entry, shift_start_time, status, description):
     print("i am here")
-    if isinstance(latest_entry, tuple):
-        latest_entry = latest_entry[0]
-    sql = """
-        INSERT INTO sig_transactions  (
-            usrid,
-            event_dt,
-            event_time,
-            latest_entry,
-            shift_start_time,
-            status,
-            description
-        )
-        VALUES (?, ?, ?, ?, ?, ?, ?)
-        """
-    params = (usrid, event_dt, event_time, latest_entry, shift_start_time, status, description)
+    # if isinstance(latest_entry, tuple):
+    #     latest_entry = latest_entry[0]
+    # sql = """
+    #     INSERT INTO sig_transactions  (
+    #         usrid,
+    #         event_dt,
+    #         event_time,
+    #         latest_entry,
+    #         shift_start_time,
+    #         status,
+    #         description
+    #     )
+    #     VALUES (?, ?, ?, ?, ?, ?, ?)
+    #     """
+    # params = (usrid, event_dt, event_time, latest_entry, shift_start_time, status, description)
 
-    params= (int(usrid), event_dt, event_time, latest_entry, shift_start_time, status, description)
+    event_dtx = event_dt
+    event_timex = event_time
+    latest_entryx = latest_entry
+    shift_start_timex =shift_start_time
 
-    print(params)
-    conn = get_logger_db_conn()
-    cursor = conn.cursor()
-    cursor.execute(sql, params)
-    conn.commit()
+    print(usrid, event_dtx, event_timex, latest_entryx, shift_start_timex, status, description)
+
+    # print(params)
+    # conn = get_logger_db_conn()
+    # cursor = conn.cursor()
+    # cursor.execute(sql, params)
+    # conn.commit()
 
     # cursor.close()
     # conn.close()
@@ -299,6 +304,7 @@ def savetodb(usrid, event_dt, event_time, latest_entry, shift_start_time, status
     pass
 
 def checkdb(usrid, event_dt, event_time, latest_entry, shift_start_time, status, description):
+    print("i am here")
     savetodb(usrid, event_dt, event_time, latest_entry, shift_start_time, status, description)
 
 ###############################################

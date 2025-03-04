@@ -284,13 +284,18 @@ def savetodb(usrid, event_dt, event_time, latest_entry, shift_start_time, status
         """
     params = (usrid, event_dt, event_time, latest_entry, shift_start_time, status, description)
 
-    params= (int(usrid), event_dt, event_time, latest_entry, shift_start_time, status, description)
+    event_dtx = event_dt
+    event_timex = event_time
+    latest_entryx = latest_entry
+    shift_start_timex =shift_start_time
 
-    print(params)
-    conn = get_logger_db_conn()
-    cursor = conn.cursor()
-    cursor.execute(sql, params)
-    conn.commit()
+    print(usrid, event_dtx, event_timex, latest_entryx, shift_start_timex, status, description)
+
+    # print(params)
+    # conn = get_logger_db_conn()
+    # cursor = conn.cursor()
+    # cursor.execute(sql, params)
+    # conn.commit()
 
     # cursor.close()
     # conn.close()

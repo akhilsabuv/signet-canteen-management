@@ -266,12 +266,47 @@ def check_elegibility(event_dt, devuid, usrid):
 ###############################################
 # Define Save to DB Elegibility
 ###############################################
+
+import datetime
+
+def format_param(param):
+    if isinstance(param, datetime.datetime):
+        # Format datetime as a string; adjust format as needed
+        return "'" + param.strftime("%Y-%m-%d %H:%M:%S") + "'"
+    elif isinstance(param, datetime.time):
+        return "'" + param.strftime("%H:%M:%S") + "'"
+    elif isinstance(param, str):
+        # Wrap strings in quotes; escape single quotes if needed
+        return "'" + param.replace("'", "''") + "'"
+    else:
+        # For numbers and others, use the default string conversion
+        return str(param)
+
+def print_full_query(sql, params):
+    # Create a copy of the SQL string
+    query = sql
+    # For each parameter, replace the first occurrence of ? with the formatted parameter
+    for param in params:
+        formatted = format_param(param)
+        query = query.replace("?", formatted, 1)
+    print(query)
+
+
+
 def savetodb(usrid, event_dt, event_time, latest_entry, shift_start_time, status, description):
-    print("i am here")
-    if isinstance(latest_entry, tuple):
+    # Convert usrid to an integer if needed
+    if isinstance(usrid, str):
+        try:
+            usrid = int(usrid)
+        except ValueError:
+            raise ValueError("usrid must be convertible to an integer")
+    
+    # If latest_entry is a tuple or list, extract its first element
+    if isinstance(latest_entry, (tuple, list)):
         latest_entry = latest_entry[0]
+    
     sql = """
-        INSERT INTO sig_transactions  (
+        INSERT INTO sig_transactions (
             usrid,
             event_dt,
             event_time,
@@ -281,22 +316,21 @@ def savetodb(usrid, event_dt, event_time, latest_entry, shift_start_time, status
             description
         )
         VALUES (?, ?, ?, ?, ?, ?, ?)
-        """
+    """
     params = (usrid, event_dt, event_time, latest_entry, shift_start_time, status, description)
-
-    params= (int(usrid), event_dt, event_time, latest_entry, shift_start_time, status, description)
-
-    print(params)
-    conn = get_logger_db_conn()
-    cursor = conn.cursor()
-    cursor.execute(sql, params)
-    conn.commit()
-
+    
+    # Print the query and the parameters for debugging
+    print_full_query(sql, params)
+    
+    # Uncomment below to execute the query:
+    # conn = get_logger_db_conn()
+    # cursor = conn.cursor()
+    # cursor.execute(sql, params)
+    # conn.commit()
     # cursor.close()
     # conn.close()
-
-    # print("Row inserted successfully.")
-    pass
+    
+    print("Row inserted successfully.")
 
 def checkdb(usrid, event_dt, event_time, latest_entry, shift_start_time, status, description):
     savetodb(usrid, event_dt, event_time, latest_entry, shift_start_time, status, description)

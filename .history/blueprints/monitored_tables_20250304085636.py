@@ -267,7 +267,6 @@ def check_elegibility(event_dt, devuid, usrid):
 # Define Save to DB Elegibility
 ###############################################
 def savetodb(usrid, event_dt, event_time, latest_entry, shift_start_time, status, description):
-    print("i am here")
     if isinstance(latest_entry, tuple):
         latest_entry = latest_entry[0]
     sql = """
@@ -284,13 +283,21 @@ def savetodb(usrid, event_dt, event_time, latest_entry, shift_start_time, status
         """
     params = (usrid, event_dt, event_time, latest_entry, shift_start_time, status, description)
 
-    params= (int(usrid), event_dt, event_time, latest_entry, shift_start_time, status, description)
+    usrid = '1'  # Provided as string; will be converted to int.
+    event_dtx = event_dt
+    event_timex = event_time
+    latest_entryx = latest_entry
+    shift_start_time = datetime.time(3, 0)
+    status = 0
+    description = "description"
 
-    print(params)
-    conn = get_logger_db_conn()
-    cursor = conn.cursor()
-    cursor.execute(sql, params)
-    conn.commit()
+
+
+    # print(params)
+    # conn = get_logger_db_conn()
+    # cursor = conn.cursor()
+    # cursor.execute(sql, params)
+    # conn.commit()
 
     # cursor.close()
     # conn.close()
